@@ -25,7 +25,7 @@
 </template>
 
 <script>
-    import Slide from "@/components/Slide";
+    import Slide from "@/components/common/Slide";
     import ContentLayout from "@/components/ContentLayout";
     import TeacherCard from "@/components/common/TeacherCard";
 

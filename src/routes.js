@@ -2,7 +2,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
-import Layout from './components/Layout'
+import Layout from './components/common/Layout'
 import Home from './components/Home'
 import Notice from './components/NEWS/Notice'
 import BriefIntroduction from "@/components/ABOUT/BriefIntroduction";

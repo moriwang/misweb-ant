@@ -8,7 +8,7 @@
 </template>
 
 <script>
-    import Slide from "@/components/Slide";
+    import Slide from "@/components/common/Slide";
 
     const slidetitle = [
         {

@@ -1,7 +1,7 @@
 <template>
     <div id="navbar">
         <div class="logo">
-            <img src="../assets/logo_ntpu.png" />
+            <img src="../../assets/logo_ntpu.png" />
         </div>
         <a-menu theme="light" mode="horizontal" style="line-height: 64px" class="nav-menu"
                 :defaultSelectedKeys="[$route.path]"
