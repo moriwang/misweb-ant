@@ -54,7 +54,7 @@
 
 <style scoped>
     #component-footer{
-        background-color: #F0F2F5;
+        background-color: #E3ECEF;
         padding: 32px 50px 0;
     }
 

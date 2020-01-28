@@ -1,5 +1,5 @@
 <template>
-    <a-layout id="components-layout" :style="{height:'100vh'}">
+    <a-layout id="components-layout" style="min-height:100vh">
         <a-layout-header>
             <Navbar></Navbar>
         </a-layout-header>

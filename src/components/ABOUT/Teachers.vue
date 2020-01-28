@@ -1,29 +1,32 @@
 <template>
     <div>
         <Slide :title="slidetitle"></Slide>
-        <div class="section-content">
-            <h2>師資陣容</h2>
-            <p>本所目前有專任教師5名，來自本校各系所與學術、企業界深具實務經驗的兼任教師10人，合聘教師1名，他系教師5名，以及行政人員1名。</p>
-            <a-tabs defaultActiveKey="1">
-                <a-tab-pane tab="專任教師" key="1" forceRender>
-                    <teacher-card :teacherlist="fulltimeteacher"></teacher-card>
-                </a-tab-pane>
-                <a-tab-pane tab="合聘教師" key="2" forceRender>
-                    <teacher-card :teacherlist="jointteacher"></teacher-card>
-                </a-tab-pane>
-                <a-tab-pane tab="他系教師" key="3" forceRender>
-                    <teacher-card :teacherlist="otherteacher"></teacher-card>
-                </a-tab-pane>
-                <a-tab-pane tab="行政人員" key="4" forceRender>
-                    <teacher-card :teacherlist="staff"></teacher-card>
-                </a-tab-pane>
-            </a-tabs>
-        </div>
+        <content-layout>
+            <template v-slot:content>
+                <h2>師資陣容</h2>
+                <p>本所目前有專任教師5名，來自本校各系所與學術、企業界深具實務經驗的兼任教師10人，合聘教師1名，他系教師5名，以及行政人員1名。</p>
+                <a-tabs defaultActiveKey="1">
+                    <a-tab-pane tab="專任教師" key="1" forceRender>
+                        <teacher-card :teacherlist="fulltimeteacher"></teacher-card>
+                    </a-tab-pane>
+                    <a-tab-pane tab="合聘教師" key="2" forceRender>
+                        <teacher-card :teacherlist="jointteacher"></teacher-card>
+                    </a-tab-pane>
+                    <a-tab-pane tab="他系教師" key="3" forceRender>
+                        <teacher-card :teacherlist="otherteacher"></teacher-card>
+                    </a-tab-pane>
+                    <a-tab-pane tab="行政人員" key="4" forceRender>
+                        <teacher-card :teacherlist="staff"></teacher-card>
+                    </a-tab-pane>
+                </a-tabs>
+            </template>
+        </content-layout>
     </div>
 </template>
 
 <script>
     import Slide from "@/components/Slide";
+    import ContentLayout from "@/components/ContentLayout";
     import TeacherCard from "@/components/common/TeacherCard";
 
     const slidetitle = [
@@ -170,6 +173,7 @@
         name: "Teachers",
         components:{
             Slide,
+            ContentLayout,
             TeacherCard
         },
         data() {
@@ -185,34 +189,4 @@
 </script>
 
 <style scoped>
-    .section-content {
-        margin-left: auto;
-        margin-right: auto;
-        width: 1200px;
-        padding: 30px 0;
-    }
-
-    @media only screen and (max-width: 1440px) {
-        .section-content {
-            margin-left: auto;
-            margin-right: auto;
-            width: 1100px
-        }
-    }
-
-    @media only screen and (max-width: 1200px) {
-        .section-content {
-            margin-left: auto;
-            margin-right: auto;
-            width: 880px
-        }
-    }
-
-    @media only screen and (max-width: 992px) {
-        .section-content {
-            margin-left: auto;
-            margin-right: auto;
-            width: 87.5%
-        }
-    }
 </style>

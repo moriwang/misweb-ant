@@ -6,6 +6,7 @@ import Layout from './components/Layout'
 import Home from './components/Home'
 import Notice from './components/NEWS/Notice'
 import BriefIntroduction from "@/components/ABOUT/BriefIntroduction";
+import EducationAim from "@/components/ABOUT/EducationAim";
 import Teachers from "@/components/ABOUT/Teachers";
 
 Vue.use(VueRouter)
@@ -46,6 +47,11 @@ export const routes = [
                 path: 'about',
                 name: '2-1',
                 component: BriefIntroduction
+            },
+            {
+                path:'aim',
+                name: '2-2',
+                component: EducationAim
             },
             {
                 path: 'teachers',
