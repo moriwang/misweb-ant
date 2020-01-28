@@ -7,7 +7,7 @@ Vue.config.productionTip = false
 import router from "@/routes";
 
 // Ant Design 組件
-import { Button, Layout, Breadcrumb, Menu, LocaleProvider, Carousel, Row, Col, Icon} from 'ant-design-vue'
+import { Button, Layout, Breadcrumb, Menu, LocaleProvider, Carousel, Row, Col, Icon, Card, Tabs} from 'ant-design-vue'
 Vue.use(Button)
 Vue.use(Layout)
 Vue.use(Breadcrumb)
@@ -17,6 +17,8 @@ Vue.use(Carousel)
 Vue.use(Row)
 Vue.use(Col)
 Vue.use(Icon)
+Vue.use(Card)
+Vue.use(Tabs)
 
 new Vue({
     router,

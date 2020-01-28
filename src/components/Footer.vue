@@ -2,7 +2,7 @@
     <div id="component-footer">
         <div class="container">
             <a-row :gutter="24">
-                <a-col :span="8">
+                <a-col :lg="8" :sm="12" :xs="24">
                     <h3>相關連結</h3>
                     <a>NTPU English Website</a>
                     <br>
@@ -20,11 +20,11 @@
                     <br>
                     <a>臺北大學學生手冊</a>
                 </a-col>
-                <a-col :span="8">
+                <a-col :lg="8" :sm="0" :xs="0">
                     <h3>校園地圖</h3>
                     <img class="footer-map" src="https://www.ntpu.edu.tw/chinese/about/images/maps_all_2019.jpg">
                 </a-col>
-                <a-col :span="8">
+                <a-col :lg="8" :sm="12" :xs="24">
                     <h3>聯絡資訊</h3>
                     <h3><a-icon theme="filled" type="facebook" /></h3>
                     <p><span>所辦助教：鄧雅燕 助教</span></p>
@@ -54,7 +54,7 @@
 
 <style scoped>
     #component-footer{
-        background-color: #e8ddcf;
+        background-color: #F0F2F5;
         padding: 32px 50px 0;
     }
 

@@ -5,6 +5,8 @@ import VueRouter from 'vue-router'
 import Layout from './components/Layout'
 import Home from './components/Home'
 import Notice from './components/NEWS/Notice'
+import BriefIntroduction from "@/components/ABOUT/BriefIntroduction";
+import Teachers from "@/components/ABOUT/Teachers";
 
 Vue.use(VueRouter)
 
@@ -40,6 +42,16 @@ export const routes = [
                 name: '1-4',
                 component: Layout,
             },
+            {
+                path: 'about',
+                name: '2-1',
+                component: BriefIntroduction
+            },
+            {
+                path: 'teachers',
+                name: '2-3',
+                component: Teachers
+            }
         ]
     },
     {

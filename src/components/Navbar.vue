@@ -27,16 +27,13 @@
             <a-sub-menu key="/2">
                 <template slot="title" class="submenu-title-wrapper">系所介紹</template>
                 <a-menu-item key="/2-1">
-                    <router-link :to="{name: '2-1'}" exact>系所簡介</router-link>
+                    <router-link :to="{name: '2-1'}" exact>關於本所</router-link>
                 </a-menu-item>
                 <a-menu-item key="/2-2">
                     <router-link :to="{name: '2-2'}" exact>教育目標</router-link>
                 </a-menu-item>
                 <a-menu-item key="/2-3">
                     <router-link :to="{name: '2-3'}" exact>師資介紹</router-link>
-                </a-menu-item>
-                <a-menu-item key="/2-4">
-                    <router-link :to="{name: '2-4'}" exact>聯絡資訊</router-link>
                 </a-menu-item>
             </a-sub-menu>
             <a-sub-menu key="/3">
