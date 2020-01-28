@@ -4,10 +4,12 @@ import VueRouter from 'vue-router'
 
 import Layout from './components/common/Layout'
 import Home from './components/Home'
-import Notice from './components/NEWS/Notice'
-import BriefIntroduction from "@/components/ABOUT/BriefIntroduction";
-import EducationAim from "@/components/ABOUT/EducationAim";
-import Teachers from "@/components/ABOUT/Teachers";
+import Notice from './components/News/Notice'
+import BriefIntroduction from "@/components/Introduction/BriefIntroduction";
+import EducationAim from "@/components/Introduction/EducationAim";
+import Teachers from "@/components/Introduction/Teachers";
+import AdmissionsBrochure from "@/components/Enrollment/AdmissionsBrochure";
+import SuccessiveProgram from "@/components/Enrollment/SuccessiveProgram";
 
 Vue.use(VueRouter)
 
@@ -49,7 +51,7 @@ export const routes = [
                 component: BriefIntroduction
             },
             {
-                path:'aim',
+                path:'goals',
                 name: '2-2',
                 component: EducationAim
             },
@@ -57,6 +59,16 @@ export const routes = [
                 path: 'teachers',
                 name: '2-3',
                 component: Teachers
+            },
+            {
+                path: 'admission',
+                name: '3-1',
+                component: AdmissionsBrochure
+            },
+            {
+                path: 'successive-program',
+                name: '3-2',
+                component: SuccessiveProgram
             }
         ]
     },

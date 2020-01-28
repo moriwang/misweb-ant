@@ -79,5 +79,6 @@
 
     .card-back{
         transform: rotateY(180deg);
+        background-color: #F1F2F5;
     }
 </style>

@@ -3,8 +3,10 @@
         <div v-for="(k, index) in title" :key="index">
 <!--            <img src="https://pgw.udn.com.tw/gw/photo.php?u=https://uc.udn.com.tw/photo/2019/05/13/1/6297002.jpg&x=0&y=0&sw=0&sh=0&exp=3600">-->
             <img :src="k.imgURL">
-            <h1>{{k.chinese}}</h1>
-            <h2>{{k.english}}</h2>
+            <div class="carousel-title">
+                <h1>{{k.chinese}}</h1>
+                <h2>{{k.english}}</h2>
+            </div>
         </div>
     </a-carousel>
 </template>
@@ -25,7 +27,6 @@
         text-align: center;
         height: 450px;
         width: 100%;
-        line-height: 160px;
         background: #364d79;
         overflow: hidden;
         position: relative;
@@ -37,18 +38,20 @@
         filter: brightness(50%) contrast(70%);
     }
 
-    .ant-carousel >>> .slick-slide h1 {
-         position: absolute;
-         left: 60px;
-         bottom: 40px;
-         font-size: 45px;
-         color: #fff;
-    }
-
-    .ant-carousel >>> .slick-slide h2 {
+    .ant-carousel >>> .slick-slide .carousel-title {
         position: absolute;
         left: 60px;
-        bottom: 0;
+        bottom: 50px;
+        text-align: left;
+    }
+
+    .ant-carousel >>> .slick-slide .carousel-title h1 {
+        font-size: 45px;
+        color: #fff;
+        margin-bottom: 10px;
+    }
+
+    .ant-carousel >>> .slick-slide .carousel-title h2 {
         color: #fff;
     }
 </style>
