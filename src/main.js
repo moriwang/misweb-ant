@@ -3,9 +3,22 @@ import App from './App.vue'
 
 Vue.config.productionTip = false
 
-import { Button } from 'ant-design-vue'
+// 路由跳转规则
+import router from "@/routes";
+
+// Ant Design 組件
+import { Button, Layout, Breadcrumb, Menu, LocaleProvider, Carousel, Row, Col, Icon} from 'ant-design-vue'
 Vue.use(Button)
+Vue.use(Layout)
+Vue.use(Breadcrumb)
+Vue.use(Menu)
+Vue.use(LocaleProvider)
+Vue.use(Carousel)
+Vue.use(Row)
+Vue.use(Col)
+Vue.use(Icon)
 
 new Vue({
+    router,
     render: h => h(App),
 }).$mount('#app')
