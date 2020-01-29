@@ -5,6 +5,8 @@ import VueRouter from 'vue-router'
 import Layout from './components/common/Layout'
 import Home from './components/Home'
 import Notice from './components/News/Notice'
+import Activity from "@/components/News/Activity";
+import Competition from "@/components/News/Competition";
 import BriefIntroduction from "@/components/Introduction/BriefIntroduction";
 import EducationAim from "@/components/Introduction/EducationAim";
 import Teachers from "@/components/Introduction/Teachers";
@@ -22,11 +24,10 @@ Vue.use(VueRouter)
 export const routes = [
     {
         path: '/',
-        name: 'index',
         component: Layout,
         children:[
             {
-                path: 'home',
+                path: '',
                 name: '0',
                 component: Home,
             },
@@ -36,19 +37,14 @@ export const routes = [
                 component: Notice,
             },
             {
-                path: 'home',
+                path: 'activities',
                 name: '1-2',
-                component: Layout,
+                component: Activity,
             },
             {
-                path: 'home',
+                path: 'competition',
                 name: '1-3',
-                component: Layout,
-            },
-            {
-                path: 'home',
-                name: '1-4',
-                component: Layout,
+                component: Competition,
             },
             {
                 path: 'about',

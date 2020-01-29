@@ -12,20 +12,19 @@
     import Slide from "@/components/common/Slide";
     import ContentLayout from "@/components/ContentLayout";
 
-
     const slidetitle = [
         {
-            'chinese': '所務公告',
-            'english': 'Administrative announcement',
+            'chinese': '活動資訊',
+            'english': 'Activities',
             'imgURL': 'https://pgw.udn.com.tw/gw/photo.php?u=https://uc.udn.com.tw/photo/2019/05/13/1/6297002.jpg&x=0&y=0&sw=0&sh=0&exp=3600'
         },
     ]
 
     export default {
-        name: "Notice",
+        name: "Activity",
         components:{
-            Slide,
-            ContentLayout
+            ContentLayout,
+            Slide
         },
         data() {
             return{
@@ -36,5 +35,4 @@
 </script>
 
 <style scoped>
-
 </style>

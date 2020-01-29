@@ -6,8 +6,8 @@
         <a-menu theme="light" mode="horizontal" style="line-height: 64px" class="nav-menu"
                 :defaultSelectedKeys="[$route.name]"
                 :subMenuCloseDelay="0">
-            <a-menu-item key="home">
-                <router-link :to="{path: '/home'}" exact>首頁</router-link>
+            <a-menu-item key="0">
+                <router-link :to="{name: '0'}" exact>首頁</router-link>
             </a-menu-item>
             <a-sub-menu key="1">
                 <span slot="title" class="submenu-title-wrapper">最新消息</span>

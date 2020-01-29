@@ -24,7 +24,14 @@
                 </a-col>
                 <a-col :lg="8" :sm="0" :xs="0">
                     <h3>校園地圖</h3>
-                    <img class="footer-map" src="https://www.ntpu.edu.tw/chinese/about/images/maps_all_2019.jpg">
+                    <a-tooltip :mouseEnterDelay="0.3">
+                        <template slot="title">
+                            <p style="font-size: 14px; margin: 0">點擊圖片放大查看</p>
+                        </template>
+                        <a href="https://www.ntpu.edu.tw/chinese/about/images/maps_all_2019.jpg" target="_blank">
+                            <img class="footer-map" src="https://www.ntpu.edu.tw/chinese/about/images/maps_all_2019.jpg">
+                        </a>
+                    </a-tooltip>
                 </a-col>
                 <a-col :lg="8" :sm="12" :xs="24">
                     <div class="footer-contact">
@@ -62,11 +69,6 @@
         padding: 32px 0 0;
     }
 
-    #component-footer .container{
-        min-height: 200px;
-        margin-bottom: 24px;
-    }
-
     #component-footer .footer-map{
         height: 200px;
         object-fit: cover;
@@ -83,15 +85,16 @@
         padding-bottom: 12px;
     }
 
-    .container {
+    #component-footer .container{
+        min-height: 200px;
+        margin-bottom: 24px;
         margin-left: auto;
         margin-right: auto;
         width: 1300px;
-        /*padding: 40px 0 80px 0;*/
     }
 
     @media only screen and (max-width: 1440px) {
-        .container{
+        #component-footer .container{
             margin-left: auto;
             margin-right: auto;
             width: 1100px
@@ -99,7 +102,7 @@
     }
 
     @media only screen and (max-width: 1200px) {
-        .container {
+        #component-footer .container {
             margin-left: auto;
             margin-right: auto;
             width: 880px
@@ -107,7 +110,7 @@
     }
 
     @media only screen and (max-width: 992px) {
-        .container {
+        #component-footer .container {
             margin-left: auto;
             margin-right: auto;
             width: 87.5%
