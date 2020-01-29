@@ -3,34 +3,38 @@
         <div class="container">
             <a-row :gutter="24">
                 <a-col :lg="8" :sm="12" :xs="24">
+                    <div class="footer-link">
                     <h3>相關連結</h3>
-                    <a>NTPU English Website</a>
-                    <br>
-                    <a>國立臺北大學資管所舊所網</a>
-                    <br>
-                    <a>國立臺北大學</a>
-                    <br>
-                    <a>國立臺北大學圖書館</a>
-                    <br>
-                    <a>臺灣博碩士論文知識加值系統</a>
-                    <br>
-                    <a>電子商務研究期刊</a>
-                    <br>
-                    <a>Google 學術搜尋</a>
-                    <br>
-                    <a>臺北大學學生手冊</a>
+                        <a>NTPU English Website</a>
+                        <br>
+                        <a>國立臺北大學資管所舊所網</a>
+                        <br>
+                        <a>國立臺北大學</a>
+                        <br>
+                        <a>國立臺北大學圖書館</a>
+                        <br>
+                        <a>臺灣博碩士論文知識加值系統</a>
+                        <br>
+                        <a>電子商務研究期刊</a>
+                        <br>
+                        <a>Google 學術搜尋</a>
+                        <br>
+                        <a>臺北大學學生手冊</a>
+                    </div>
                 </a-col>
                 <a-col :lg="8" :sm="0" :xs="0">
                     <h3>校園地圖</h3>
                     <img class="footer-map" src="https://www.ntpu.edu.tw/chinese/about/images/maps_all_2019.jpg">
                 </a-col>
                 <a-col :lg="8" :sm="12" :xs="24">
-                    <h3>聯絡資訊</h3>
-                    <h3><a-icon theme="filled" type="facebook" /></h3>
-                    <p><span>所辦助教：鄧雅燕 助教</span></p>
-                    <p>地址：237 新北市三峽區大學路151號商學大樓8樓</p>
-                    <p>信箱：yyteng@mail.ntpu.edu.tw</p>
-                    <p>電話：(02)8674-1111 分機 66894</p>
+                    <div class="footer-contact">
+                        <h3>聯絡資訊</h3>
+                        <h3><a-icon theme="filled" type="facebook" /></h3>
+                        <p><span>所辦助教：鄧雅燕 助教</span></p>
+                        <p>地址：237 新北市三峽區大學路151號商學大樓8樓</p>
+                        <p>信箱：yyteng@mail.ntpu.edu.tw</p>
+                        <p>電話：(02)8674-1111 分機 66894</p>
+                    </div>
                 </a-col>
             </a-row>
         </div>
@@ -55,7 +59,7 @@
 <style scoped>
     #component-footer{
         background-color: #E3ECEF;
-        padding: 32px 50px 0;
+        padding: 32px 0 0;
     }
 
     #component-footer .container{
@@ -68,10 +72,55 @@
         object-fit: cover;
     }
 
+    #component-footer .footer-contact{
+        padding-left: 24px;
+    }
+
     #component-footer .footer-end{
         margin: 0;
         text-align: center;
         font-size: 14px;
         padding-bottom: 12px;
+    }
+
+    .container {
+        margin-left: auto;
+        margin-right: auto;
+        width: 1300px;
+        /*padding: 40px 0 80px 0;*/
+    }
+
+    @media only screen and (max-width: 1440px) {
+        .container{
+            margin-left: auto;
+            margin-right: auto;
+            width: 1100px
+        }
+    }
+
+    @media only screen and (max-width: 1200px) {
+        .container {
+            margin-left: auto;
+            margin-right: auto;
+            width: 880px
+        }
+    }
+
+    @media only screen and (max-width: 992px) {
+        .container {
+            margin-left: auto;
+            margin-right: auto;
+            width: 87.5%
+        }
+
+        #component-footer .footer-contact{
+            padding-left: 0;
+        }
+    }
+
+    @media only screen and (max-width: 576px) {
+        #component-footer .footer-contact{
+            margin-top: 30px;
+        }
     }
 </style>

@@ -10,6 +10,11 @@ import EducationAim from "@/components/Introduction/EducationAim";
 import Teachers from "@/components/Introduction/Teachers";
 import AdmissionsBrochure from "@/components/Enrollment/AdmissionsBrochure";
 import SuccessiveProgram from "@/components/Enrollment/SuccessiveProgram";
+import Publication from "@/components/Academic/Publication";
+import Graduation from "@/components/Academic/Graduation";
+import Course from "@/components/Student/Course";
+import Degree from "@/components/Student/Degree";
+import Download from "@/components/Download/Download";
 
 Vue.use(VueRouter)
 
@@ -69,6 +74,31 @@ export const routes = [
                 path: 'successive-program',
                 name: '3-2',
                 component: SuccessiveProgram
+            },
+            {
+                path: 'publication',
+                name: '4-1',
+                component: Publication
+            },
+            {
+                path: 'graduation',
+                name: '4-2',
+                component: Graduation
+            },
+            {
+                path: 'curriculum-planning',
+                name: '5-1',
+                component: Course
+            },
+            {
+                path: 'degree-requirements',
+                name: '5-2',
+                component: Degree
+            },
+            {
+                path: 'downloads',
+                name: '6-1',
+                component: Download
             }
         ]
     },

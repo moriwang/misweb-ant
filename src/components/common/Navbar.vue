@@ -20,9 +20,6 @@
                 <a-menu-item key="1-3">
                     <router-link :to="{name: '1-3'}" exact>比賽資訊</router-link>
                 </a-menu-item>
-                <a-menu-item key="1-4">
-                    <router-link :to="{name: '1-4'}" exact>榮譽榜</router-link>
-                </a-menu-item>
             </a-sub-menu>
             <a-sub-menu key="2">
                 <template slot="title" class="submenu-title-wrapper">系所介紹</template>
@@ -60,24 +57,18 @@
             <a-sub-menu key="5">
                 <template slot="title" class="submenu-title-wrapper">學生資訊</template>
                 <a-menu-item key="5-1">
-                    <router-link :to="{name: '5-1'}" exact>課程地圖</router-link>
+                    <router-link :to="{name: '5-1'}" exact>課程規劃</router-link>
                 </a-menu-item>
                 <a-menu-item key="5-2">
                     <router-link :to="{name: '5-2'}" exact>修業規定</router-link>
-                </a-menu-item>
-                <a-menu-item key="5-3">
-                    <router-link :to="{name: '5-3'}" exact>課程大綱</router-link>
                 </a-menu-item>
             </a-sub-menu>
             <a-sub-menu key="6">
                 <template slot="title" class="submenu-title-wrapper">表單與連結</template>
                 <a-menu-item key="6-1">
-                    <router-link :to="{name: '6-1'}" exact>系所規章</router-link>
+                    <router-link :to="{name: '6-1'}" exact>表單下載</router-link>
                 </a-menu-item>
                 <a-menu-item key="6-2">
-                    <router-link :to="{name: '6-2'}" exact>表單下載</router-link>
-                </a-menu-item>
-                <a-menu-item key="6-3">
                     <a href="http://goo.gl/forms/LlMbFWXwzyxiYgV52" target="_blank">畢業校友回填 <a-icon type="link" style="color: #1DA57A"/></a>
                 </a-menu-item>
             </a-sub-menu>
