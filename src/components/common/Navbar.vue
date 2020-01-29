@@ -94,4 +94,44 @@
         text-align: right;
         padding-right: 50px;
     }
+
+    @media only screen and (max-width: 1440px) {
+        #navbar .logo img{
+            height: 50px;
+            object-fit: cover;
+            float: left;
+            margin: 5px 40px;
+        }
+
+        #navbar .nav-menu{
+            text-align: right;
+            padding-right: 40px;
+        }
+    }
+
+    @media only screen and (max-width: 1200px) {
+        #navbar .logo img{
+            height: 50px;
+            object-fit: cover;
+            float: left;
+            margin: 5px 20px;
+        }
+
+        #navbar .nav-menu{
+            text-align: right;
+            padding-right: 30px;
+        }
+    }
+
+    @media only screen and (max-width: 992px) {
+        #navbar .logo img{
+            display: none;
+        }
+
+        #navbar .nav-menu{
+            text-align: unset;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+    }
 </style>

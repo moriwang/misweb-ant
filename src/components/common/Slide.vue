@@ -1,7 +1,6 @@
 <template>
     <a-carousel autoplay>
         <div v-for="(k, index) in title" :key="index">
-<!--            <img src="https://pgw.udn.com.tw/gw/photo.php?u=https://uc.udn.com.tw/photo/2019/05/13/1/6297002.jpg&x=0&y=0&sw=0&sh=0&exp=3600">-->
             <img :src="k.imgURL">
             <div class="carousel-title">
                 <h1>{{k.chinese}}</h1>
@@ -27,14 +26,16 @@
         text-align: center;
         height: 450px;
         width: 100%;
-        background: #364d79;
+        background: #E5ECEF;
         overflow: hidden;
         position: relative;
     }
 
     .ant-carousel img{
         width: 100%;
+        max-height: 450px;
         object-fit: cover;
+        object-position: 50% 100%;
         filter: brightness(50%) contrast(70%);
     }
 
@@ -60,6 +61,10 @@
             height: 400px;
         }
 
+        .ant-carousel img{
+            max-height: 400px;
+        }
+
         .ant-carousel >>> .slick-slide .carousel-title {
             left: 50px;
             bottom: 40px;
@@ -72,13 +77,21 @@
 
     @media only screen and (max-width: 1200px) {
         .ant-carousel >>> .slick-slide {
-            height: 350px;
+            height: 375px;
+        }
+
+        .ant-carousel img{
+            max-height: 375px;
         }
     }
 
     @media only screen and (max-width: 992px) {
         .ant-carousel >>> .slick-slide {
-            height: 300px;
+            height: 320px;
+        }
+
+        .ant-carousel img{
+            max-height: 320px;
         }
 
         .ant-carousel >>> .slick-slide .carousel-title {
@@ -91,9 +104,38 @@
         }
     }
 
-    @media only screen and (max-width: 576px) {
+    @media only screen and (max-width: 549px) {
         .ant-carousel >>> .slick-slide {
-            height: 250px;
+            height: 300px;
+        }
+
+        .ant-carousel img{
+            max-height: 300px;
+            width: unset;
+        }
+
+        .ant-carousel >>> .slick-slide .carousel-title h2 {
+            font-size: 18px;
+        }
+
+    }
+
+    @media only screen and (max-width: 400px) {
+        .ant-carousel >>> .slick-slide {
+            height: 320px;
+        }
+
+        .ant-carousel img{
+            max-height: 320px;
+        }
+
+        .ant-carousel >>> .slick-slide .carousel-title {
+            left: 20px;
+            bottom: 20px;
+        }
+
+        .ant-carousel >>> .slick-slide .carousel-title h1 {
+            font-size: 24px;
         }
     }
 </style>
