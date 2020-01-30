@@ -15,10 +15,13 @@
                     <router-link :to="{name: '1-1'}" exact>所務公告</router-link>
                 </a-menu-item>
                 <a-menu-item key="1-2">
-                    <router-link :to="{name: '1-2'}" exact>活動資訊</router-link>
+                    <router-link :to="{name: '1-2'}" exact>招生訊息</router-link>
                 </a-menu-item>
                 <a-menu-item key="1-3">
-                    <router-link :to="{name: '1-3'}" exact>比賽資訊</router-link>
+                    <router-link :to="{name: '1-3'}" exact>學術活動</router-link>
+                </a-menu-item>
+                <a-menu-item key="1-4">
+                    <router-link :to="{name: '1-4'}" exact>企業徵才</router-link>
                 </a-menu-item>
             </a-sub-menu>
             <a-sub-menu key="2">
@@ -53,6 +56,9 @@
                 <a-menu-item key="4-2">
                     <router-link :to="{name: '4-2'}" exact>歷屆論文</router-link>
                 </a-menu-item>
+                <a-menu-item key="4-3">
+                    <router-link :to="{name: '4-3'}" exact>電子商務研究</router-link>
+                </a-menu-item>
             </a-sub-menu>
             <a-sub-menu key="5">
                 <template slot="title" class="submenu-title-wrapper">學生資訊</template>
@@ -83,6 +89,12 @@
 </script>
 
 <style scoped>
+    #navbar{
+        /*position: fixed;*/
+        /*z-index: 1000;*/
+        width: 100%;
+    }
+
     #navbar .logo img{
         height: 50px;
         object-fit: cover;

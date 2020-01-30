@@ -16,26 +16,26 @@
 
     const slidetitle = [
         {
-            'chinese': '學術活動',
-            'english': 'Activities and competition news',
+            'chinese': '企業徵才',
+            'english': 'Campus recruit',
             'imgURL': 'https://pgw.udn.com.tw/gw/photo.php?u=https://uc.udn.com.tw/photo/2019/05/13/1/6297002.jpg&x=0&y=0&sw=0&sh=0&exp=3600'
         },
     ]
 
     const news = [
         {
-            'tag': '所上活動',
-            'tagcolor': 'rgba(13,181,39)',
-            'title': '演講二 - 從經銷代理看到創業契機',
+            'tag': '企業徵才',
+            'tagcolor': 'rgba(246,154,41)',
+            'title': 'XX企業徵才範例資訊',
             'date': '2016/09/27',
-            'post':'呂俊毅先生、麗茂股份有限公司業務副總進行演講',
+            'post':'XX企業徵才範例資訊',
             'fileName': '',
             'fileURL': ''
         },
     ]
 
     export default {
-        name: "Competition",
+        name: "CampusRecruit",
         components:{
             ContentLayout,
             Slide,

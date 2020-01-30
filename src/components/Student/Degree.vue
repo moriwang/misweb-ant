@@ -46,7 +46,7 @@
                 </p>
                 <br>
                 <h2>歷年修業規定下載</h2>
-                <div v-for="(k,index) in degreeRequirements" :key="index">
+                <div v-for="k in degreeRequirements" :key="k.fileName">
                     <a :href="k.fileURL"><a-icon type="file" /> {{k.fileName}}</a>
                     <br>
                 </div>

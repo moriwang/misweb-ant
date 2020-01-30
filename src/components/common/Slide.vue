@@ -1,6 +1,6 @@
 <template>
     <a-carousel autoplay>
-        <div v-for="(k, index) in title" :key="index">
+        <div v-for="k in title" :key="k.chinese">
             <img :src="k.imgURL">
             <div class="carousel-title">
                 <h1>{{k.chinese}}</h1>

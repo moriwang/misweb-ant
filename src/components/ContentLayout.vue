@@ -15,7 +15,7 @@
         margin-left: auto;
         margin-right: auto;
         width: 1200px;
-        padding: 40px 0 80px 0;
+        padding: 40px 0 60px 0;
     }
 
     @media only screen and (max-width: 1440px) {

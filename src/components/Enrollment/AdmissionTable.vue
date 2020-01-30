@@ -142,4 +142,8 @@
     >>>.ant-table-tbody > tr > td {
         white-space: pre-wrap;
     }
+
+    >>>.ant-table-tbody > tr:hover:not(.ant-table-expanded-row) > td {
+        background-color: unset;
+    }
 </style>

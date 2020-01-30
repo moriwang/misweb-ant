@@ -4,9 +4,10 @@ import VueRouter from 'vue-router'
 
 import Layout from './components/common/Layout'
 import Home from './components/Home'
-import Notice from './components/News/Notice'
-import Activity from "@/components/News/Activity";
+import AdministrativeAnnouncement from './components/News/AdministrativeAnnouncement'
+import EnrollmentInformation from "@/components/News/EnrollmentInformation";
 import Competition from "@/components/News/Competition";
+import CampusRecruit from "@/components/News/CampusRecruit";
 import BriefIntroduction from "@/components/Introduction/BriefIntroduction";
 import EducationAim from "@/components/Introduction/EducationAim";
 import Teachers from "@/components/Introduction/Teachers";
@@ -14,6 +15,7 @@ import AdmissionsBrochure from "@/components/Enrollment/AdmissionsBrochure";
 import SuccessiveProgram from "@/components/Enrollment/SuccessiveProgram";
 import Publication from "@/components/Academic/Publication";
 import Graduation from "@/components/Academic/Graduation";
+import EcResearch from "@/components/Academic/EcResearch";
 import Course from "@/components/Student/Course";
 import Degree from "@/components/Student/Degree";
 import Download from "@/components/Download/Download";
@@ -32,19 +34,24 @@ export const routes = [
                 component: Home,
             },
             {
-                path: 'notice',
+                path: 'administrative-announcement',
                 name: '1-1',
-                component: Notice,
+                component: AdministrativeAnnouncement,
             },
             {
-                path: 'activities',
+                path: 'enrollment-information',
                 name: '1-2',
-                component: Activity,
+                component: EnrollmentInformation,
             },
             {
                 path: 'competition',
                 name: '1-3',
                 component: Competition,
+            },
+            {
+                path: 'campus-recruit',
+                name: '1-4',
+                component: CampusRecruit,
             },
             {
                 path: 'about',
@@ -80,6 +87,11 @@ export const routes = [
                 path: 'graduation',
                 name: '4-2',
                 component: Graduation
+            },
+            {
+                path: 'ecommerce-research',
+                name: '4-3',
+                component: EcResearch
             },
             {
                 path: 'curriculum-planning',

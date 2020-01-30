@@ -19,13 +19,13 @@
                 <br>
                 <br>
                 <h2>問與答</h2>
-                <div v-for="(k,index) in successiveprogramQA" :key="index">
+                <div v-for="k in successiveprogramQA" :key="k.question">
                     <h4>Q: {{k.question}}</h4>
                     <p style="white-space: pre-wrap; margin-left:1.2em; text-indent: -1.2em;">A: {{k.answer}}</p>
                 </div>
                 <br>
                 <h2>文件下載</h2>
-                <div v-for="(k,index) in successiveprogram" :key="index">
+                <div v-for="k in successiveprogram" :key="k.fileName">
                     <a :href="k.fileURL"><a-icon type="file-word" /> {{k.fileName}}</a>
                     <br>
                 </div>

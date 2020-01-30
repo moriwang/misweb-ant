@@ -10,13 +10,13 @@
                 <admission-table></admission-table>
                 <br>
                 <h2>招生簡章下載</h2>
-                <div v-for="(k,index) in admissionbrochure" :key="index">
+                <div v-for="k in admissionbrochure" :key="k.fileName">
                     <a :href="k.fileURL"><a-icon type="file-pdf" /> {{k.fileName}}</a>
                     <br>
                 </div>
                 <br>
                 <h2>歷屆考題</h2>
-                <div v-for="(k,index) in previousExam" :key="index">
+                <div v-for="k in previousExam" :key="k.fileName">
                     <a :href="k.fileURL"><a-icon type="file" /> {{k.fileName}}</a>
                     <br>
                 </div>

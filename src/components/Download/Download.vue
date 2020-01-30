@@ -4,7 +4,7 @@
         <content-layout>
             <template v-slot:content>
                 <h2>常用表單下載</h2>
-                <div v-for="(k,index) in downloads" :key="index">
+                <div v-for="k in downloads" :key="k.fileName">
                     <a :href="k.fileURL"><a-icon type="file" /> {{k.fileName}}</a>
                     <br>
                 </div>
