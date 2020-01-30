@@ -1,7 +1,7 @@
 <template>
     <div>
         <a-row :gutter="24">
-            <a-col :span="6" v-for="(k,index) in news" :key="index">
+            <a-col :xl="6" :md="8" :sm="12" :xs="24" v-for="(k,index) in news" :key="index">
                 <a-card id="single-news" :style="{'background-color':backgroundColor(k.tagcolor)}" hoverable @click="showModal(k)">
                     <a-tag :color="k.tagcolor">{{k.tag}}</a-tag>
                     <br>
@@ -129,6 +129,7 @@
 <style scoped>
     #single-news{
         height: 200px;
+        margin-bottom: 24px;
     }
 
     #single-news .ant-tag{
