@@ -35,7 +35,7 @@
         width: 100%;
         max-height: 450px;
         object-fit: cover;
-        object-position: 50% 100%;
+        object-position: 50% 50%;
         filter: brightness(50%) contrast(70%);
     }
 
@@ -111,7 +111,7 @@
 
         .ant-carousel img{
             max-height: 300px;
-            width: unset;
+            /*width: unset;*/
         }
 
         .ant-carousel >>> .slick-slide .carousel-title h2 {
