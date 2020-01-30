@@ -132,6 +132,12 @@
         margin-bottom: 24px;
     }
 
+    @media only screen and (max-width: 549px) {
+        #single-news{
+            height: 170px;
+        }
+    }
+
     #single-news .ant-tag{
         margin-bottom: 12px;
     }

@@ -122,11 +122,11 @@
 
     @media only screen and (max-width: 400px) {
         .ant-carousel >>> .slick-slide {
-            height: 320px;
+            height: 200px;
         }
 
         .ant-carousel img{
-            max-height: 320px;
+            max-height: 200px;
         }
 
         .ant-carousel >>> .slick-slide .carousel-title {
