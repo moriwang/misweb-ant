@@ -4,11 +4,9 @@
         <content-layout>
             <template v-slot:content>
                 <h2>修業時程安排</h2>
-                <br>
-                <a-steps progressDot :current="4">
+                <a-steps progressDot :current="4" :direction="getDirection(screenWidth)" id="degree-progress">
                     <a-step v-for="(k,index) in degreeProgress" :title="k.step" :description="k.describe" :key="index"/>
                 </a-steps>
-                <br>
                 <br>
                 <h2>學術著作之要求</h2>
                 <p>
@@ -101,13 +99,48 @@
         },
         data() {
             return{
+                screenWidth:'',
                 slidetitle: slidetitle,
                 degreeRequirements: degreeRequirements,
                 degreeProgress: degreeProgress
+            }
+        },
+        mounted() {
+            this.screenWidth = document.body.clientWidth;
+            window.onresize = () => {
+                return (() => {
+                    this.screenWidth = document.body.clientWidth;
+                })();
+            };
+        },
+        methods:{
+            getDirection(width){
+                return (width<680)? 'vertical':'horizontal'
             }
         }
     }
 </script>
 
 <style scoped>
+    >>>.ant-steps-dot .ant-steps-item-content {
+        width: 150px;
+    }
+
+    >>>.ant-steps-item-description{
+        width: 150px;
+        white-space: pre-wrap;
+    }
+
+
+    #degree-progress{
+        margin-top: 30px;
+        margin-bottom: 24px;
+    }
+
+    @media only screen and (max-width: 650px) {
+        #degree-progress{
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+    }
 </style>

@@ -12,11 +12,9 @@
                 </p>
                 <br>
                 <h2>五年一貫</h2>
-                <br>
-                <a-steps progressDot :current="4">
+                <a-steps progressDot :current="4" :direction="getDirection(screenWidth)" id="successive-progress">
                     <a-step v-for="(k,index) in successiveProgress" :title="k.step" :description="k.describe" :key="index"/>
                 </a-steps>
-                <br>
                 <br>
                 <h2>問與答</h2>
                 <div v-for="k in successiveprogramQA" :key="k.question">
@@ -114,18 +112,48 @@
         },
         data() {
             return{
+                screenWidth: '',
                 slidetitle: slidetitle,
                 successiveProgress: successiveProgress,
                 successiveprogram: successiveprogram,
                 successiveprogramQA: successiveprogramQA
+            }
+        },
+        mounted() {
+            this.screenWidth = document.body.clientWidth;
+            window.onresize = () => {
+                return (() => {
+                    this.screenWidth = document.body.clientWidth;
+                })();
+            };
+        },
+        methods:{
+            getDirection(width){
+                return (width<680)? 'vertical':'horizontal'
             }
         }
     }
 </script>
 
 <style scoped>
+    >>>.ant-steps-dot .ant-steps-item-content {
+        width: 150px;
+    }
+
     >>>.ant-steps-item-description{
         width: 150px;
         white-space: pre-wrap;
+    }
+
+    #successive-progress{
+        margin-top: 30px;
+        margin-bottom: 24px;
+    }
+
+    @media only screen and (max-width: 650px) {
+        #successive-progress{
+            margin-top: 0;
+            margin-bottom: 0;
+        }
     }
 </style>

@@ -54,6 +54,7 @@
 
     .ant-carousel >>> .slick-slide .carousel-title h2 {
         color: #fff;
+        margin-right: 20px;
     }
 
     @media only screen and (max-width: 1440px) {
