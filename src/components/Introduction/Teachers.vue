@@ -24,15 +24,7 @@
 <script>
     import ContentLayout from "@/components/ContentLayout";
     import TeacherCard from "@/components/common/TeacherCard";
-    import {teacherList} from '@/api'
-
-    const slidetitle = [
-        {
-            'chinese': '師資介紹',
-            'english': 'About the teachers',
-            'imgURL': 'https://pgw.udn.com.tw/gw/photo.php?u=https://uc.udn.com.tw/photo/2019/05/13/1/6297002.jpg&x=0&y=0&sw=0&sh=0&exp=3600'
-        },
-    ];
+    import {teacherList, pageSlide} from '@/api'
 
     export default {
         name: "Teachers",
@@ -41,11 +33,15 @@
             TeacherCard
         },
         mounted() {
+            this.getPageSlide(
+                {
+                    'pageId': this.$route.name,
+                })
             this.getTeacherList()
         },
         data() {
             return {
-                slidetitle: slidetitle,
+                slidetitle: [],
                 fulltimeteacher: [],
                 jointteacher: [],
                 otherteacher: [],
@@ -53,6 +49,12 @@
             }
         },
         methods: {
+            getPageSlide(parameter) {
+                pageSlide(parameter).then(response => {
+                    this.slidetitle = response
+                })
+            },
+
             getTeacherList() {
                 teacherList().then(response => {
                     this.fulltimeteacher = response[0];

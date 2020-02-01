@@ -17,24 +17,31 @@
 
 <script>
     import ContentLayout from "@/components/ContentLayout";
+    import {pageSlide} from "@/api";
 
-    const slidetitle = [
-        {
-            'chinese': '教學目標',
-            'english': 'Educational goals',
-            'imgURL': 'https://pgw.udn.com.tw/gw/photo.php?u=https://uc.udn.com.tw/photo/2019/05/13/1/6297002.jpg&x=0&y=0&sw=0&sh=0&exp=3600'
-        },
-    ];
 
     export default {
         name: "EducationAim",
         components: {
             ContentLayout
         },
+        mounted() {
+            this.getPageSlide(
+                {
+                    'pageId': this.$route.name,
+                })
+        },
         data() {
             return {
-                slidetitle: slidetitle
+                slidetitle: []
             }
+        },
+        methods: {
+            getPageSlide(parameter) {
+                pageSlide(parameter).then(response => {
+                    this.slidetitle = response
+                })
+            },
         }
     }
 </script>

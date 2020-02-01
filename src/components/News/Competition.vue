@@ -9,14 +9,7 @@
 <script>
     import ContentLayout from "@/components/ContentLayout";
     import NewsCard from "@/components/common/NewsCard";
-
-    const slidetitle = [
-        {
-            'chinese': '學術活動',
-            'english': 'Activities and competition news',
-            'imgURL': 'https://pgw.udn.com.tw/gw/photo.php?u=https://uc.udn.com.tw/photo/2019/05/13/1/6297002.jpg&x=0&y=0&sw=0&sh=0&exp=3600'
-        },
-    ];
+    import {pageSlide} from "@/api";
 
     const news = [
         {
@@ -36,11 +29,24 @@
             ContentLayout,
             NewsCard
         },
+        mounted() {
+            this.getPageSlide(
+                {
+                    'pageId': this.$route.name,
+                })
+        },
         data() {
             return {
-                slidetitle: slidetitle,
+                slidetitle: [],
                 news: news
             }
+        },
+        methods: {
+            getPageSlide(parameter) {
+                pageSlide(parameter).then(response => {
+                    this.slidetitle = response
+                })
+            },
         }
     }
 </script>
