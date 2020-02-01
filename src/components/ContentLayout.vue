@@ -1,12 +1,25 @@
 <template>
-    <div class="section-content">
-        <slot name="content"></slot>
+    <div>
+        <Slide :title="title"></Slide>
+        <div class="section-content">
+            <slot name="content"></slot>
+        </div>
     </div>
 </template>
 
 <script>
+    import Slide from "@/components/common/Slide";
+
     export default {
-        name: "ContentLayout"
+        name: "ContentLayout",
+        props: {
+            title: {
+                type: Array
+            }
+        },
+        components: {
+            Slide,
+        },
     }
 </script>
 

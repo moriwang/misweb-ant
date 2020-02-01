@@ -1,16 +1,16 @@
 <template>
     <div id="navbar">
         <div class="logo">
-            <img src="../../assets/logo_ntpu.png" />
+            <img src="../../assets/logo_ntpu.png"/>
         </div>
-        <a-menu theme="light" mode="horizontal" style="line-height: 64px" class="nav-menu"
-                :defaultSelectedKeys="[$route.name]"
-                :subMenuCloseDelay="0">
+        <a-menu :defaultSelectedKeys="[$route.name]" :subMenuCloseDelay="0" class="nav-menu" mode="horizontal"
+                style="line-height: 64px"
+                theme="light">
             <a-menu-item key="0">
                 <router-link :to="{name: '0'}" exact>首頁</router-link>
             </a-menu-item>
             <a-sub-menu key="1">
-                <span slot="title" class="submenu-title-wrapper">最新消息</span>
+                <span class="submenu-title-wrapper" slot="title">最新消息</span>
                 <a-menu-item key="1-1">
                     <router-link :to="{name: '1-1'}" exact>所務公告</router-link>
                 </a-menu-item>
@@ -25,7 +25,7 @@
                 </a-menu-item>
             </a-sub-menu>
             <a-sub-menu key="2">
-                <template slot="title" class="submenu-title-wrapper">系所介紹</template>
+                <template class="submenu-title-wrapper" slot="title">系所介紹</template>
                 <a-menu-item key="2-1">
                     <router-link :to="{name: '2-1'}" exact>關於本所</router-link>
                 </a-menu-item>
@@ -37,7 +37,7 @@
                 </a-menu-item>
             </a-sub-menu>
             <a-sub-menu key="3">
-                <template slot="title" class="submenu-title-wrapper">招生資訊</template>
+                <template class="submenu-title-wrapper" slot="title">招生資訊</template>
                 <a-menu-item key="3-1">
                     <router-link :to="{name: '3-1'}" exact>招生簡章</router-link>
                 </a-menu-item>
@@ -45,11 +45,13 @@
                     <router-link :to="{name: '3-2'}" exact>一貫修讀學、碩士學位</router-link>
                 </a-menu-item>
                 <a-menu-item key="3-3">
-                    <a href="http://www.ntpu.edu.tw/exam/" target="_blank">台北大學招生資訊網 <a-icon type="link" style="color: #1DA57A"/></a>
+                    <a href="http://www.ntpu.edu.tw/exam/" target="_blank">台北大學招生資訊網
+                        <a-icon style="color: #1DA57A" type="link"/>
+                    </a>
                 </a-menu-item>
             </a-sub-menu>
             <a-sub-menu key="4">
-                <template slot="title" class="submenu-title-wrapper">學術研究</template>
+                <template class="submenu-title-wrapper" slot="title">學術研究</template>
                 <a-menu-item key="4-1">
                     <router-link :to="{name: '4-1'}" exact>學術發表</router-link>
                 </a-menu-item>
@@ -61,7 +63,7 @@
                 </a-menu-item>
             </a-sub-menu>
             <a-sub-menu key="5">
-                <template slot="title" class="submenu-title-wrapper">學生資訊</template>
+                <template class="submenu-title-wrapper" slot="title">學生資訊</template>
                 <a-menu-item key="5-1">
                     <router-link :to="{name: '5-1'}" exact>課程規劃</router-link>
                 </a-menu-item>
@@ -70,12 +72,14 @@
                 </a-menu-item>
             </a-sub-menu>
             <a-sub-menu key="6">
-                <template slot="title" class="submenu-title-wrapper">表單與連結</template>
+                <template class="submenu-title-wrapper" slot="title">表單與連結</template>
                 <a-menu-item key="6-1">
                     <router-link :to="{name: '6-1'}" exact>表單下載</router-link>
                 </a-menu-item>
                 <a-menu-item key="6-2">
-                    <a href="http://goo.gl/forms/LlMbFWXwzyxiYgV52" target="_blank">畢業校友回填 <a-icon type="link" style="color: #1DA57A"/></a>
+                    <a href="http://goo.gl/forms/LlMbFWXwzyxiYgV52" target="_blank">畢業校友回填
+                        <a-icon style="color: #1DA57A" type="link"/>
+                    </a>
                 </a-menu-item>
             </a-sub-menu>
         </a-menu>
@@ -89,58 +93,58 @@
 </script>
 
 <style scoped>
-    #navbar{
+    #navbar {
         /*position: fixed;*/
         /*z-index: 1000;*/
         width: 100%;
     }
 
-    #navbar .logo img{
+    #navbar .logo img {
         height: 50px;
         object-fit: cover;
         float: left;
         margin: 5px 50px;
     }
 
-    #navbar .nav-menu{
+    #navbar .nav-menu {
         text-align: right;
         padding-right: 50px;
     }
 
     @media only screen and (max-width: 1440px) {
-        #navbar .logo img{
+        #navbar .logo img {
             height: 50px;
             object-fit: cover;
             float: left;
             margin: 5px 40px;
         }
 
-        #navbar .nav-menu{
+        #navbar .nav-menu {
             text-align: right;
             padding-right: 40px;
         }
     }
 
     @media only screen and (max-width: 1200px) {
-        #navbar .logo img{
+        #navbar .logo img {
             height: 50px;
             object-fit: cover;
             float: left;
             margin: 5px 20px;
         }
 
-        #navbar .nav-menu{
+        #navbar .nav-menu {
             text-align: right;
             padding-right: 30px;
         }
     }
 
     @media only screen and (max-width: 992px) {
-        #navbar .logo img{
+        #navbar .logo img {
             display: none;
         }
 
-        #navbar .nav-menu{
+        #navbar .nav-menu {
             text-align: unset;
             padding-left: 10px;
             padding-right: 10px;

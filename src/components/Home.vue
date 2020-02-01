@@ -1,17 +1,13 @@
 <template>
-    <div>
-    <Slide :title="slidetitle"></Slide>
-        <content-layout>
-            <template v-slot:content>
-                <h2>最新公告</h2>
-                <news-card :news="news"></news-card>
-            </template>
-        </content-layout>
-    </div>
+    <content-layout :title="slidetitle">
+        <template v-slot:content>
+            <h2>最新公告</h2>
+            <news-card :news="news"></news-card>
+        </template>
+    </content-layout>
 </template>
 
 <script>
-    import Slide from "@/components/common/Slide";
     import ContentLayout from "@/components/ContentLayout";
     import NewsCard from "@/components/common/NewsCard";
 
@@ -26,7 +22,7 @@
             'english': 'Graduate Institute of Information Management, NTPU',
             'imgURL': 'https://pgw.udn.com.tw/gw/photo.php?u=https://uc.udn.com.tw/photo/2019/05/13/1/6297002.jpg&x=0&y=0&sw=0&sh=0&exp=3600'
         }
-    ]
+    ];
 
     const news = [
         {
@@ -34,12 +30,12 @@
             'tagcolor': 'rgba(231,99,97)',
             'title': '109學年度碩士班一般入學考試乙組面試名單公告',
             'date': '2020/01/16',
-            'post':'一、面試日期109年02月12日(星期三)。\n' +
+            'post': '一、面試日期109年02月12日(星期三)。\n' +
                 '二、面試名單及各梯次報到時間請參考附檔。\n' +
                 '三、面試地點：本校臺北校區教學大樓7樓714教室。\n' +
                 '四、報到時，請攜帶具有照片之證件與甄試證(至報名系統列印)。\n' +
                 '五、以上如有任何疑問，煩請來電(02)8674-1111 分機66894 鄧助教。 ',
-            'attachment':[
+            'attachment': [
                 {
                     'fileName': '109年乙組面試名單',
                     'fileURL': 'http://120.126.146.184:5000/sharing/Ldg4630Sc'
@@ -51,7 +47,7 @@
             'tagcolor': 'rgba(45,183,245)',
             'title': '2017年第十屆崇越論文大賞',
             'date': '2017/06/17',
-            'post':'我今年接辦崇越論文大賞籌備工作，比賽報名時間到下周五(6/23)為止，想邀請您指導學生，或是您系上的同學，參加論文比賽。\n' +
+            'post': '我今年接辦崇越論文大賞籌備工作，比賽報名時間到下周五(6/23)為止，想邀請您指導學生，或是您系上的同學，參加論文比賽。\n' +
                 '\n' +
                 '1. 同學需要鼓勵，才能積極脫離同溫層的小確幸\n' +
                 '我們的學生，常常習於安逸，習於小確幸，習於「同溫層」，實在需要給予一些刺激。如果能積極鼓勵，培養學生鬥志，掌握每個可能的機會，對他的未來是很有幫助的。\n' +
@@ -93,7 +89,7 @@
             'tagcolor': 'rgba(13,181,39)',
             'title': '演講二 - 從經銷代理看到創業契機',
             'date': '2016/09/27',
-            'post':'呂俊毅先生、麗茂股份有限公司業務副總進行演講',
+            'post': '呂俊毅先生、麗茂股份有限公司業務副總進行演講',
             'fileName': '',
             'fileURL': ''
         },
@@ -102,7 +98,7 @@
             'tagcolor': 'rgba(246,154,41)',
             'title': 'XX企業徵才範例資訊',
             'date': '2016/09/27',
-            'post':'XX企業徵才範例資訊',
+            'post': 'XX企業徵才範例資訊',
             'fileName': '',
             'fileURL': ''
         },
@@ -111,7 +107,7 @@
             'tagcolor': 'rgba(13,181,39)',
             'title': '演講二 - 從經銷代理看到創業契機',
             'date': '2016/09/27',
-            'post':'呂俊毅先生、麗茂股份有限公司業務副總進行演講',
+            'post': '呂俊毅先生、麗茂股份有限公司業務副總進行演講',
             'fileName': '',
             'fileURL': ''
         },
@@ -120,7 +116,7 @@
             'tagcolor': 'rgba(246,154,41)',
             'title': 'XX企業徵才範例資訊',
             'date': '2016/09/27',
-            'post':'XX企業徵才範例資訊',
+            'post': 'XX企業徵才範例資訊',
             'fileName': '',
             'fileURL': ''
         },
@@ -129,7 +125,7 @@
             'tagcolor': 'rgba(13,181,39)',
             'title': '演講二 - 從經銷代理看到創業契機',
             'date': '2016/09/27',
-            'post':'呂俊毅先生、麗茂股份有限公司業務副總進行演講',
+            'post': '呂俊毅先生、麗茂股份有限公司業務副總進行演講',
             'fileName': '',
             'fileURL': ''
         },
@@ -138,21 +134,20 @@
             'tagcolor': 'rgba(246,154,41)',
             'title': 'XX企業徵才範例資訊',
             'date': '2016/09/27',
-            'post':'XX企業徵才範例資訊',
+            'post': 'XX企業徵才範例資訊',
             'fileName': '',
             'fileURL': ''
         }
-    ]
+    ];
 
     export default {
         name: "Home",
-        components:{
-            Slide,
+        components: {
             ContentLayout,
             NewsCard
         },
         data() {
-            return{
+            return {
                 slidetitle: slidetitle,
                 news: news
             }

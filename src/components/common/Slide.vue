@@ -1,6 +1,6 @@
 <template>
     <a-carousel autoplay>
-        <div v-for="k in title" :key="k.chinese">
+        <div :key="k.chinese" v-for="k in title">
             <img :src="k.imgURL">
             <div class="carousel-title">
                 <h1>{{k.chinese}}</h1>
@@ -13,8 +13,8 @@
 <script>
     export default {
         name: "Slide",
-        props:{
-            title:{
+        props: {
+            title: {
                 type: Array
             }
         }
@@ -31,7 +31,7 @@
         position: relative;
     }
 
-    .ant-carousel img{
+    .ant-carousel img {
         width: 100%;
         max-height: 450px;
         object-fit: cover;
@@ -62,7 +62,7 @@
             height: 400px;
         }
 
-        .ant-carousel img{
+        .ant-carousel img {
             max-height: 400px;
         }
 
@@ -81,7 +81,7 @@
             height: 375px;
         }
 
-        .ant-carousel img{
+        .ant-carousel img {
             max-height: 375px;
         }
     }
@@ -91,7 +91,7 @@
             height: 320px;
         }
 
-        .ant-carousel img{
+        .ant-carousel img {
             max-height: 320px;
         }
 
@@ -110,7 +110,7 @@
             height: 300px;
         }
 
-        .ant-carousel img{
+        .ant-carousel img {
             max-height: 300px;
             /*width: unset;*/
         }
@@ -126,7 +126,7 @@
             height: 200px;
         }
 
-        .ant-carousel img{
+        .ant-carousel img {
             max-height: 200px;
         }
 

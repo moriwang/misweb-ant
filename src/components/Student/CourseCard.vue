@@ -1,7 +1,7 @@
 <template>
     <a-row :gutter="24">
-        <a-col :lg="4" :md="6" :sm="8" :xs="12" v-for="k in courses" :key="k.name">
-            <a-card id="single-course" hoverable :style="{'background-color': getCardColor(k)}">
+        <a-col :key="k.name" :lg="4" :md="6" :sm="8" :xs="12" v-for="k in courses">
+            <a-card :style="{'background-color': getCardColor(k)}" hoverable id="single-course">
                 <div class="course-name">
                     <p>{{k.name}}</p>
                 </div>
@@ -14,19 +14,17 @@
     export default {
         name: "CourseCard",
         props: {
-            courses:{
+            courses: {
                 type: Array
             }
         },
-        methods:{
-            getCardColor(k){
-                if (k.field === 'system'){
+        methods: {
+            getCardColor(k) {
+                if (k.field === 'system') {
                     return '#cfd4e7'
-                }
-                else if (k.field === 'manage'){
+                } else if (k.field === 'manage') {
                     return '#e7cfbf'
-                }
-                else{
+                } else {
                     return '#cce4e7'
                 }
             }
@@ -35,7 +33,7 @@
 </script>
 
 <style scoped>
-    #single-course{
+    #single-course {
         border-radius: 10px;
         height: 100px;
         margin-bottom: 24px;
@@ -44,7 +42,7 @@
         align-items: center;
     }
 
-    #single-course .course-name p{
+    #single-course .course-name p {
         width: 100px;
         text-align: center;
         color: #494949;

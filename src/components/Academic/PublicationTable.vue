@@ -6,12 +6,12 @@
 <script>
     const columns = [
         {
-            title:'',
+            title: '',
             dataIndex: 'key',
             key: 'key',
         },
         {
-            title:'論文名稱',
+            title: '論文名稱',
             dataIndex: 'paper',
             key: 'paper',
         },
@@ -110,7 +110,7 @@
 </script>
 
 <style scoped>
-    >>>.ant-table-tbody > tr > td {
+    >>> .ant-table-tbody > tr > td {
         white-space: pre-wrap;
     }
 </style>

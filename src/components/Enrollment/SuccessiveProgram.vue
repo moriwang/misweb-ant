@@ -1,39 +1,37 @@
 <template>
-    <div>
-        <Slide :title="slidetitle"></Slide>
-        <content-layout>
-            <template v-slot:content>
-                <h2>修讀辦法</h2>
-                <p>
-                    修業滿四學期表現優良者即可申請<br>
-                    於第八學期（含）之前去的學士學位並參與本校碩士班甄試入學或一般招生考試<br>
-                    取得碩士班研究生資格後，大學期間所選修之碩士班課程，其修業成績達七十分以上，可申請抵免<br>
-                    歡迎目前升大三和大四的同學申請
-                </p>
+    <content-layout :title="slidetitle">
+        <template v-slot:content>
+            <h2>修讀辦法</h2>
+            <p>
+                修業滿四學期表現優良者即可申請<br>
+                於第八學期（含）之前去的學士學位並參與本校碩士班甄試入學或一般招生考試<br>
+                取得碩士班研究生資格後，大學期間所選修之碩士班課程，其修業成績達七十分以上，可申請抵免<br>
+                歡迎目前升大三和大四的同學申請
+            </p>
+            <br>
+            <h2>五年一貫</h2>
+            <a-steps :current="4" :direction="getDirection(screenWidth)" id="successive-progress" progressDot>
+                <a-step :description="k.describe" :key="index" :title="k.step" v-for="(k,index) in successiveProgress"/>
+            </a-steps>
+            <br>
+            <h2>問與答</h2>
+            <div :key="k.question" v-for="k in successiveprogramQA">
+                <h4>Q: {{k.question}}</h4>
+                <p style="white-space: pre-wrap; margin-left:1.2em; text-indent: -1.2em;">A: {{k.answer}}</p>
+            </div>
+            <br>
+            <h2>文件下載</h2>
+            <div :key="k.fileName" v-for="k in successiveprogram">
+                <a :href="k.fileURL">
+                    <a-icon type="file-word"/>
+                    {{k.fileName}}</a>
                 <br>
-                <h2>五年一貫</h2>
-                <a-steps progressDot :current="4" :direction="getDirection(screenWidth)" id="successive-progress">
-                    <a-step v-for="(k,index) in successiveProgress" :title="k.step" :description="k.describe" :key="index"/>
-                </a-steps>
-                <br>
-                <h2>問與答</h2>
-                <div v-for="k in successiveprogramQA" :key="k.question">
-                    <h4>Q: {{k.question}}</h4>
-                    <p style="white-space: pre-wrap; margin-left:1.2em; text-indent: -1.2em;">A: {{k.answer}}</p>
-                </div>
-                <br>
-                <h2>文件下載</h2>
-                <div v-for="k in successiveprogram" :key="k.fileName">
-                    <a :href="k.fileURL"><a-icon type="file-word" /> {{k.fileName}}</a>
-                    <br>
-                </div>
-            </template>
-        </content-layout>
-    </div>
+            </div>
+        </template>
+    </content-layout>
 </template>
 
 <script>
-    import Slide from "@/components/common/Slide";
     import ContentLayout from "@/components/ContentLayout";
 
     const slidetitle = [
@@ -42,7 +40,7 @@
             'english': 'Successive bachelor-master program and double major program',
             'imgURL': 'https://pgw.udn.com.tw/gw/photo.php?u=https://uc.udn.com.tw/photo/2019/05/13/1/6297002.jpg&x=0&y=0&sw=0&sh=0&exp=3600'
         },
-    ]
+    ];
 
     const successiveProgress = [
         {
@@ -65,7 +63,7 @@
             'step': '碩一下',
             'describe': '論文寫作與口試'
         },
-    ]
+    ];
 
     const successiveprogram = [
         {
@@ -76,7 +74,7 @@
             'fileURL': 'http://120.126.146.184/files/fiveyear/一貫修讀學、碩士學位申請表.docx',
             'fileName': '國立臺北大學資訊管理研究所一貫修讀學、碩士學位申請表'
         },
-    ]
+    ];
 
     const successiveprogramQA = [
         {
@@ -101,17 +99,16 @@
                 '工讀金：NT$4,000/月（優先資格\n' +
                 '計畫助理金：NT$4,000~8,000/月（依參與的計畫而訂）'
         },
-    ]
+    ];
 
 
     export default {
         name: "SuccessiveProgram",
-        components:{
-            Slide,
+        components: {
             ContentLayout,
         },
         data() {
-            return{
+            return {
                 screenWidth: '',
                 slidetitle: slidetitle,
                 successiveProgress: successiveProgress,
@@ -127,31 +124,31 @@
                 })();
             };
         },
-        methods:{
-            getDirection(width){
-                return (width<680)? 'vertical':'horizontal'
+        methods: {
+            getDirection(width) {
+                return (width < 680) ? 'vertical' : 'horizontal'
             }
         }
     }
 </script>
 
 <style scoped>
-    >>>.ant-steps-dot .ant-steps-item-content {
+    >>> .ant-steps-dot .ant-steps-item-content {
         width: 150px;
     }
 
-    >>>.ant-steps-item-description{
+    >>> .ant-steps-item-description {
         width: 150px;
         white-space: pre-wrap;
     }
 
-    #successive-progress{
+    #successive-progress {
         margin-top: 30px;
         margin-bottom: 24px;
     }
 
     @media only screen and (max-width: 650px) {
-        #successive-progress{
+        #successive-progress {
             margin-top: 0;
             margin-bottom: 0;
         }

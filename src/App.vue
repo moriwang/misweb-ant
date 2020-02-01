@@ -8,11 +8,12 @@
 
 <script>
     import zh_TW from 'ant-design-vue/lib/locale-provider/zh_TW'
+
     export default {
         name: 'app',
-        data (){
-            return{
-                locale:zh_TW
+        data() {
+            return {
+                locale: zh_TW
             }
         }
     }

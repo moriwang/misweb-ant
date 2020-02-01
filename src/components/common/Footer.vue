@@ -4,7 +4,7 @@
             <a-row :gutter="24">
                 <a-col :lg="8" :sm="12" :xs="24">
                     <div class="footer-link">
-                    <h3>相關連結</h3>
+                        <h3>相關連結</h3>
                         <a>NTPU English Website</a>
                         <br>
                         <a>國立臺北大學資管所舊所網</a>
@@ -29,14 +29,17 @@
                             <p style="font-size: 14px; margin: 0">點擊圖片放大查看</p>
                         </template>
                         <a href="https://www.ntpu.edu.tw/chinese/about/images/maps_all_2019.jpg" target="_blank">
-                            <img class="footer-map" src="https://www.ntpu.edu.tw/chinese/about/images/maps_all_2019.jpg">
+                            <img class="footer-map"
+                                 src="https://www.ntpu.edu.tw/chinese/about/images/maps_all_2019.jpg">
                         </a>
                     </a-tooltip>
                 </a-col>
                 <a-col :lg="8" :sm="12" :xs="24">
                     <div class="footer-contact">
                         <h3>聯絡資訊</h3>
-                        <h3><a-icon theme="filled" type="facebook" /></h3>
+                        <h3>
+                            <a-icon theme="filled" type="facebook"/>
+                        </h3>
                         <p><span>所辦助教：鄧雅燕 助教</span></p>
                         <p>地址：237 新北市三峽區大學路151號商學大樓8樓</p>
                         <p>信箱：yyteng@mail.ntpu.edu.tw</p>
@@ -51,41 +54,42 @@
 
 <script>
     import {getYear} from "@/utils";
-    const year = getYear()
+
+    const year = getYear();
 
     export default {
         name: "Footer",
         data() {
-            return{
-                year:year
+            return {
+                year: year
             }
         }
     }
 </script>
 
 <style scoped>
-    #component-footer{
+    #component-footer {
         background-color: #E3ECEF;
         padding: 32px 0 0;
     }
 
-    #component-footer .footer-map{
+    #component-footer .footer-map {
         height: 200px;
         object-fit: cover;
     }
 
-    #component-footer .footer-contact{
+    #component-footer .footer-contact {
         padding-left: 24px;
     }
 
-    #component-footer .footer-end{
+    #component-footer .footer-end {
         margin: 0;
         text-align: center;
         font-size: 14px;
         padding-bottom: 12px;
     }
 
-    #component-footer .container{
+    #component-footer .container {
         min-height: 200px;
         margin-bottom: 24px;
         margin-left: auto;
@@ -94,7 +98,7 @@
     }
 
     @media only screen and (max-width: 1440px) {
-        #component-footer .container{
+        #component-footer .container {
             margin-left: auto;
             margin-right: auto;
             width: 1100px
@@ -116,13 +120,13 @@
             width: 87.5%
         }
 
-        #component-footer .footer-contact{
+        #component-footer .footer-contact {
             padding-left: 0;
         }
     }
 
     @media only screen and (max-width: 576px) {
-        #component-footer .footer-contact{
+        #component-footer .footer-contact {
             margin-top: 30px;
         }
     }

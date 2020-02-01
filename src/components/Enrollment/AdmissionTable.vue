@@ -1,5 +1,5 @@
 <template>
-    <a-table :columns="columns" :dataSource="data" bordered :pagination="false">
+    <a-table :columns="columns" :dataSource="data" :pagination="false" bordered>
     </a-table>
 </template>
 
@@ -47,7 +47,7 @@
             subjects: '口試',
             percent: '50%',
         },
-    ]
+    ];
 
     export default {
         name: "AdmissionTable",
@@ -130,7 +130,7 @@
                     dataIndex: 'percent',
                 },
             ];
-            return{
+            return {
                 data,
                 columns,
             }
@@ -139,11 +139,11 @@
 </script>
 
 <style scoped>
-    >>>.ant-table-tbody > tr > td {
+    >>> .ant-table-tbody > tr > td {
         white-space: pre-wrap;
     }
 
-    >>>.ant-table-tbody > tr:hover:not(.ant-table-expanded-row) > td {
+    >>> .ant-table-tbody > tr:hover:not(.ant-table-expanded-row) > td {
         background-color: unset;
     }
 </style>

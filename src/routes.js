@@ -20,14 +20,14 @@ import Course from "@/components/Student/Course";
 import Degree from "@/components/Student/Degree";
 import Download from "@/components/Download/Download";
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 
 // 路由跳转规则
 export const routes = [
     {
         path: '/',
         component: Layout,
-        children:[
+        children: [
             {
                 path: '',
                 name: '0',
@@ -59,7 +59,7 @@ export const routes = [
                 component: BriefIntroduction
             },
             {
-                path:'goals',
+                path: 'goals',
                 name: '2-2',
                 component: EducationAim
             },
@@ -114,11 +114,11 @@ export const routes = [
         path: '*',
         redirect: '/'
     }
-]
+];
 
-const router =  new VueRouter({
+const router = new VueRouter({
     routes,
     mode: 'history'
-})
+});
 
 export default router

@@ -1,15 +1,16 @@
 <template>
     <a-row :gutter="24">
-        <a-col :xxl="6" :xl="6" :lg="8" :md="8" :sm="12" :xs="12" v-for="(k,index) in teacherlist" :key="index" class="wrapper">
+        <a-col :key="index" :lg="8" :md="8" :sm="12" :xl="6" :xs="12" :xxl="6" class="wrapper"
+               v-for="(k,index) in teacherlist">
             <div class="teacher-card">
-                <a-card hoverable class="card-face card-front">
+                <a-card class="card-face card-front" hoverable>
                     <img
-                            alt="example"
                             :src="k.imgURL"
+                            alt="example"
                             slot="cover"
                             style="height:210px; object-fit: cover"
                     />
-                    <a-card-meta :title="k.name + ' ' + k.title">
+                    <a-card-meta :title="k.c_name + ' ' + k.title">
                         <template slot="description">
                             <p>辦公室：{{k.office}}</p>
                             <p>分機：{{k.phone}}</p>
@@ -17,7 +18,7 @@
                     </a-card-meta>
                 </a-card>
                 <a-card class="card-face card-back">
-                    <a-card-meta :title="k.name + ' ' + k.title">
+                    <a-card-meta :title="k.c_name + ' ' + k.title">
                         <template slot="description">
                             <p>辦公室：{{k.office}}</p>
                             <p>分機：{{k.phone}}</p>
@@ -38,7 +39,7 @@
 <script>
     export default {
         name: "TeacherCard",
-        props:{
+        props: {
             teacherlist: {
                 type: Array
             }
@@ -60,11 +61,11 @@
         transform-style: preserve-3d;
     }
 
-    .teacher-card:hover{
+    .teacher-card:hover {
         transform: rotateY(180deg);
     }
 
-    .teacher-card h4{
+    .teacher-card h4 {
         margin-bottom: 0;
     }
 
@@ -77,7 +78,7 @@
         backface-visibility: hidden;
     }
 
-    .card-back{
+    .card-back {
         transform: rotateY(180deg);
         background-color: #F1F2F5;
     }

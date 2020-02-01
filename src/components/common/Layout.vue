@@ -26,16 +26,16 @@
 </script>
 
 <style scoped>
-    #components-layout .ant-layout-header{
+    #components-layout .ant-layout-header {
         padding: 0;
     }
 
-    #components-layout .ant-layout-content{
+    #components-layout .ant-layout-content {
         min-height: unset;
     }
 
-    #components-layout .ant-layout-footer{
-        padding:0
+    #components-layout .ant-layout-footer {
+        padding: 0
     }
 </style>
 
