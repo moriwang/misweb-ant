@@ -59,7 +59,9 @@
                     <router-link :to="{name: '4-2'}" exact>歷屆論文</router-link>
                 </a-menu-item>
                 <a-menu-item key="4-3">
-                    <router-link :to="{name: '4-3'}" exact>電子商務研究</router-link>
+                    <a href="http://academic-journals.org/ecs/" target="_blank">電子商務研究
+                        <a-icon style="color: #1DA57A" type="link"/>
+                    </a>
                 </a-menu-item>
             </a-sub-menu>
             <a-sub-menu key="5">

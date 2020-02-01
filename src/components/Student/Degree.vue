@@ -42,10 +42,10 @@
             </p>
             <br>
             <h2>歷年修業規定下載</h2>
-            <div :key="k.fileName" v-for="k in degreeRequirements">
-                <a :href="k.fileURL">
+            <div :key="k.linkCN" v-for="k in degreeRequirements">
+                <a :href="k.linkURL">
                     <a-icon type="file"/>
-                    {{k.fileName}}</a>
+                    {{k.linkCN}}</a>
                 <br>
             </div>
         </template>
@@ -54,15 +54,8 @@
 
 <script>
     import ContentLayout from "@/components/ContentLayout";
-    import {pageSlide} from "@/api";
+    import {pageSlide, linkManager} from "@/api";
 
-
-    const degreeRequirements = [
-        {
-            'fileURL': 'http://120.126.146.184/files/examinations/105.7z',
-            'fileName': '國立台北大學資訊管理所修業規則1070320'
-        },
-    ];
 
     const degreeProgress = [
         {
@@ -88,15 +81,15 @@
         components: {
             ContentLayout
         },
-        data() {
-            return {
-                screenWidth: '',
-                slidetitle: [],
-                degreeRequirements: degreeRequirements,
-                degreeProgress: degreeProgress
-            }
-        },
         mounted() {
+            linkManager(
+                {
+                    location: 'degree-requirements'
+                }
+            ).then(response => {
+                this.degreeRequirements = response
+            })
+
             this.getPageSlide(
                 {
                     'pageId': this.$route.name,
@@ -107,6 +100,14 @@
                     this.screenWidth = document.body.clientWidth;
                 })();
             };
+        },
+        data() {
+            return {
+                screenWidth: '',
+                slidetitle: [],
+                degreeRequirements: [],
+                degreeProgress: degreeProgress
+            }
         },
         methods: {
             getDirection(width) {

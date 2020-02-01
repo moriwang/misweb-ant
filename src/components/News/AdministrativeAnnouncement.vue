@@ -9,19 +9,8 @@
 <script>
     import ContentLayout from "@/components/ContentLayout";
     import NewsCard from "@/components/common/NewsCard";
-    import {pageSlide} from "@/api";
+    import {newsManager, pageSlide} from "@/api";
 
-    const news = [
-        {
-            'tag': '所上活動',
-            'tagcolor': 'rgba(13,181,39)',
-            'title': '演講二 - 從經銷代理看到創業契機',
-            'date': '2016/09/27',
-            'post': '呂俊毅先生、麗茂股份有限公司業務副總進行演講',
-            'fileName': '',
-            'fileURL': ''
-        },
-    ];
 
     export default {
         name: "Notice",
@@ -34,11 +23,19 @@
                 {
                     'pageId': this.$route.name,
                 })
+
+            newsManager(
+                {
+                    location: '1-1'
+                }
+            ).then(response => {
+                this.news = response
+            })
         },
         data() {
             return {
                 slidetitle: [],
-                news: news
+                news: []
             }
         },
         methods: {

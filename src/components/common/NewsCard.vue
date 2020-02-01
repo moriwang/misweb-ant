@@ -8,7 +8,7 @@
                     <br>
                     <h4>{{k.title}}</h4>
                     <br>
-                    <p>{{k.date}}</p>
+                    <p>{{handleDate(k.date)}}</p>
                 </a-card>
             </a-col>
         </a-row>
@@ -33,6 +33,8 @@
 </template>
 
 <script>
+    import {getDate} from '@/utils'
+
     export default {
         name: "NewsCard",
         props: {
@@ -58,6 +60,9 @@
                 this.visible = false;
                 this.singlenews = []
             },
+            handleDate(date) {
+                return getDate(date)
+            }
         }
     }
 </script>

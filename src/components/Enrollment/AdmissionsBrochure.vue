@@ -8,18 +8,18 @@
             <admission-table></admission-table>
             <br>
             <h2>招生簡章下載</h2>
-            <div :key="k.fileName" v-for="k in admissionbrochure">
-                <a :href="k.fileURL">
+            <div :key="k.linkCN" v-for="k in admissionbrochure">
+                <a :href="k.linkURL">
                     <a-icon type="file-pdf"/>
-                    {{k.fileName}}</a>
+                    {{k.linkCN}}</a>
                 <br>
             </div>
             <br>
             <h2>歷屆考題</h2>
-            <div :key="k.fileName" v-for="k in previousExam">
-                <a :href="k.fileURL">
+            <div :key="k.linkCN" v-for="k in previousExam">
+                <a :href="k.linkURL">
                     <a-icon type="file"/>
-                    {{k.fileName}}</a>
+                    {{k.linkCN}}</a>
                 <br>
             </div>
         </template>
@@ -29,41 +29,8 @@
 <script>
     import ContentLayout from "@/components/ContentLayout";
     import AdmissionTable from "@/components/Enrollment/AdmissionTable";
-    import {pageSlide} from "@/api";
+    import {linkManager, pageSlide} from "@/api";
 
-    const admissionbrochure = [
-        {
-            'fileURL': 'http://120.126.146.184/files/admissions/regulations2_106.pdf',
-            'fileName': '106學年度碩博士班研究所招生簡章'
-        },
-        {
-            'fileURL': 'http://120.126.146.184/files/admissions/regulations1_106.pdf',
-            'fileName': '106學年度碩博士班研究所甄試簡章'
-        },
-        {
-            'fileURL': 'http://120.126.146.184/files/admissions/regulations2_105.pdf',
-            'fileName': '105學年度碩博士班研究所招生簡章'
-        },
-        {
-            'fileURL': 'http://120.126.146.184/files/admissions/regulations1_105.pdf',
-            'fileName': '105學年度碩博士班研究所甄試簡章'
-        }
-    ];
-
-    const previousExam = [
-        {
-            'fileURL': 'http://120.126.146.184/files/examinations/105.7z',
-            'fileName': '台北大學資訊管理所 105 年試題'
-        },
-        {
-            'fileURL': 'http://120.126.146.184/files/examinations/104.7z',
-            'fileName': '台北大學資訊管理所 104 年試題'
-        },
-        {
-            'fileURL': 'http://120.126.146.184/files/examinations/103.7z',
-            'fileName': '台北大學資訊管理所 103 年試題'
-        },
-    ];
 
     export default {
         name: "AdmissionsBrochure",
@@ -76,12 +43,28 @@
                 {
                     'pageId': this.$route.name,
                 })
+
+            linkManager(
+                {
+                    location: 'admission-brochure'
+                }
+            ).then(response => {
+                this.admissionbrochure = response
+            })
+
+            linkManager(
+                {
+                    location: 'previous-exam'
+                }
+            ).then(response => {
+                this.previousExam = response
+            })
         },
         data() {
             return {
                 slidetitle: [],
-                admissionbrochure: admissionbrochure,
-                previousExam: previousExam
+                admissionbrochure: [],
+                previousExam: []
             }
         },
         methods: {

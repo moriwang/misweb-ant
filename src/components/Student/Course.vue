@@ -23,10 +23,10 @@
             <course-card :courses="electiveCourses"></course-card>
             <br>
             <h2>歷年課程規劃表下載</h2>
-            <div :key="k.fileName" v-for="k in curriculumPlanning">
-                <a :href="k.fileURL">
+            <div :key="k.linkCN" v-for="k in curriculumPlanning">
+                <a :href="k.linkURL">
                     <a-icon type="file"/>
-                    {{k.fileName}}
+                    {{k.linkCN}}
                 </a>
                 <br>
             </div>
@@ -37,7 +37,7 @@
 <script>
     import ContentLayout from "@/components/ContentLayout";
     import CourseCard from "@/components/Student/CourseCard";
-    import {pageSlide} from "@/api";
+    import {pageSlide, linkManager} from "@/api";
 
 
     const foundationCourse = [
@@ -268,32 +268,6 @@
         },
     ];
 
-    const curriculumPlanning = [
-        {
-            'fileURL': 'http://120.126.146.184/files/fiveyear/一貫修讀學、碩士學位1020723.docx',
-            'fileName': '106 年課程科目規劃表'
-        },
-        {
-            'fileURL': 'http://120.126.146.184/files/fiveyear/一貫修讀學、碩士學位申請表.docx',
-            'fileName': '105 年課程科目規劃表'
-        },
-        {
-            'fileURL': 'http://120.126.146.184/files/fiveyear/一貫修讀學、碩士學位申請表.docx',
-            'fileName': '104 年課程科目規劃表'
-        },
-        {
-            'fileURL': 'http://120.126.146.184/files/fiveyear/一貫修讀學、碩士學位申請表.docx',
-            'fileName': '103 年課程科目規劃表'
-        },
-        {
-            'fileURL': 'http://120.126.146.184/files/fiveyear/一貫修讀學、碩士學位申請表.docx',
-            'fileName': '102 年課程科目規劃表'
-        },
-        {
-            'fileURL': 'http://120.126.146.184/files/fiveyear/一貫修讀學、碩士學位申請表.docx',
-            'fileName': '101 年課程科目規劃表'
-        },
-    ];
 
     export default {
         name: "Course",
@@ -302,6 +276,14 @@
             CourseCard
         },
         mounted() {
+            linkManager(
+                 {
+                     location: 'curriculum-planning'
+                 }
+            ).then(response => {
+                this.curriculumPlanning = response
+            })
+
             this.getPageSlide(
                 {
                     'pageId': this.$route.name,
@@ -314,7 +296,7 @@
                 obligatoryCourse: obligatoryCourse,
                 handsonCourse: handsonCourse,
                 electiveCourses: electiveCourses,
-                curriculumPlanning: curriculumPlanning
+                curriculumPlanning: []
             }
         },
         methods: {

@@ -21,10 +21,10 @@
             </div>
             <br>
             <h2>文件下載</h2>
-            <div :key="k.fileName" v-for="k in successiveprogram">
-                <a :href="k.fileURL">
+            <div :key="k.linkCN" v-for="k in successiveprogram">
+                <a :href="k.linkURL">
                     <a-icon type="file-word"/>
-                    {{k.fileName}}</a>
+                    {{k.linkCN}}</a>
                 <br>
             </div>
         </template>
@@ -33,7 +33,7 @@
 
 <script>
     import ContentLayout from "@/components/ContentLayout";
-    import {pageSlide} from "@/api";
+    import {linkManager, pageSlide} from "@/api";
 
     const successiveProgress = [
         {
@@ -55,17 +55,6 @@
         {
             'step': '碩一下',
             'describe': '論文寫作與口試'
-        },
-    ];
-
-    const successiveprogram = [
-        {
-            'fileURL': 'http://120.126.146.184/files/fiveyear/一貫修讀學、碩士學位1020723.docx',
-            'fileName': '國立臺北大學資訊管理研究所一貫修讀學、碩士學位辦法'
-        },
-        {
-            'fileURL': 'http://120.126.146.184/files/fiveyear/一貫修讀學、碩士學位申請表.docx',
-            'fileName': '國立臺北大學資訊管理研究所一貫修讀學、碩士學位申請表'
         },
     ];
 
@@ -105,11 +94,19 @@
                 screenWidth: '',
                 slidetitle: [],
                 successiveProgress: successiveProgress,
-                successiveprogram: successiveprogram,
-                successiveprogramQA: successiveprogramQA
+                successiveprogramQA: successiveprogramQA,
+                successiveprogram: [],
             }
         },
         mounted() {
+             linkManager(
+                 {
+                     location: 'successive-program'
+                 }
+             ).then(response => {
+                 this.successiveprogram = response
+             })
+
             this.getPageSlide(
                 {
                     'pageId': this.$route.name,

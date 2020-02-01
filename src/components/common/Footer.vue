@@ -5,21 +5,10 @@
                 <a-col :lg="8" :sm="12" :xs="24">
                     <div class="footer-link">
                         <h3>相關連結</h3>
-                        <a>NTPU English Website</a>
-                        <br>
-                        <a>國立臺北大學資管所舊所網</a>
-                        <br>
-                        <a>國立臺北大學</a>
-                        <br>
-                        <a>國立臺北大學圖書館</a>
-                        <br>
-                        <a>臺灣博碩士論文知識加值系統</a>
-                        <br>
-                        <a>電子商務研究期刊</a>
-                        <br>
-                        <a>Google 學術搜尋</a>
-                        <br>
-                        <a>臺北大學學生手冊</a>
+                        <div class="footer-link" :key="k.linkCN" v-for="k in footerLink">
+                            <a :href="k.linkURL" target="_blank">{{k.linkCN}}</a>
+                            <br>
+                        </div>
                     </div>
                 </a-col>
                 <a-col :lg="8" :sm="0" :xs="0">
@@ -28,9 +17,8 @@
                         <template slot="title">
                             <p style="font-size: 14px; margin: 0">點擊圖片放大查看</p>
                         </template>
-                        <a href="https://www.ntpu.edu.tw/chinese/about/images/maps_all_2019.jpg" target="_blank">
-                            <img class="footer-map"
-                                 src="https://www.ntpu.edu.tw/chinese/about/images/maps_all_2019.jpg">
+                        <a :href="map" target="_blank">
+                            <img class="footer-map" :src="map">
                         </a>
                     </a-tooltip>
                 </a-col>
@@ -54,16 +42,36 @@
 
 <script>
     import {getYear} from "@/utils";
+    import {linkManager} from "@/api";
 
     const year = getYear();
 
     export default {
         name: "Footer",
+        mounted() {
+            linkManager(
+                {
+                    location: 'footer-link'
+                }
+            ).then(response => {
+                this.footerLink = response
+            })
+
+            linkManager(
+                {
+                    location: 'map'
+                }
+            ).then(response => {
+                this.map = response[0].linkURL
+            })
+        },
         data() {
             return {
-                year: year
+                footerLink:[],
+                map: '',
+                year: year,
             }
-        }
+        },
     }
 </script>
 
