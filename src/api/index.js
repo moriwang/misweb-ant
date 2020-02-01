@@ -24,11 +24,18 @@ export function pageSlide(parameter) {
     })
 }
 
-export function teacherList() {
+export function teacherManager(parameter) {
     return axios({
         method: 'get',
-        url: '/api/teachers',
+        url: '/api/teacher',
+        params: parameter
     })
 }
 
-
+export function CourseManager(parameter) {
+    return axios({
+        method: 'get',
+        url: '/api/course',
+        params: parameter
+    })
+}

@@ -24,7 +24,7 @@
 <script>
     import ContentLayout from "@/components/ContentLayout";
     import TeacherCard from "@/components/common/TeacherCard";
-    import {teacherList, pageSlide} from '@/api'
+    import {teacherManager, pageSlide} from '@/api'
 
     export default {
         name: "Teachers",
@@ -56,11 +56,17 @@
             },
 
             getTeacherList() {
-                teacherList().then(response => {
-                    this.fulltimeteacher = response[0];
-                    this.jointteacher = response[1];
-                    this.otherteacher = response[2];
-                    this.staff = response[3]
+                teacherManager({state: '專任教師'}).then(response => {
+                    this.fulltimeteacher = response
+                })
+                teacherManager({state: '合聘教師'}).then(response => {
+                    this.jointteacher = response
+                })
+                teacherManager({state: '他系教師'}).then(response => {
+                    this.otherteacher = response
+                })
+                teacherManager({state: '行政人員'}).then(response => {
+                    this.staff = response
                 })
             }
         }

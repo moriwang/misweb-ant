@@ -37,236 +37,7 @@
 <script>
     import ContentLayout from "@/components/ContentLayout";
     import CourseCard from "@/components/Student/CourseCard";
-    import {pageSlide, linkManager} from "@/api";
-
-
-    const foundationCourse = [
-        {
-            'name': '統計學',
-            'field': 'both'
-        },
-        {
-            'name': '資料庫系統',
-            'field': 'both'
-        }
-    ];
-
-    const obligatoryCourse = [
-        {
-            'name': '管理資訊系統',
-            'field': 'both'
-        },
-        {
-            'name': '研究方法',
-            'field': 'both'
-        },
-        {
-            'name': '企業倫理',
-            'field': 'both'
-        },
-        {
-            'name': '論文',
-            'field': 'both'
-        },
-        {
-            'name': '軟體工程',
-            'field': 'system'
-        },
-        {
-            'name': '系統與網路管理',
-            'field': 'system'
-        },
-        {
-            'name': '資訊系統開發與管理專題',
-            'field': 'system'
-        },
-        {
-            'name': '網路行銷管理',
-            'field': 'manage'
-        },
-        {
-            'name': '電子商務',
-            'field': 'manage'
-        },
-        {
-            'name': '數位行銷',
-            'field': 'manage'
-        }
-    ];
-
-    const handsonCourse = [
-        {
-            'name': '雲端資源規劃實作',
-            'field': 'system'
-        },
-        {
-            'name': '行動網系統實作',
-            'field': 'system'
-        },
-        {
-            'name': '資料分析實作',
-            'field': 'system'
-        },
-        {
-            'name': '社群行銷實作',
-            'field': 'manage'
-        },
-        {
-            'name': '數位創新實作',
-            'field': 'manage'
-        },
-        {
-            'name': '產業觀察實作',
-            'field': 'manage'
-        }
-    ];
-
-    const electiveCourses = [
-        {
-            'name': '資料探勘(跨)',
-            'field': 'both'
-        },
-        {
-            'name': '金融科技(跨)',
-            'field': 'both'
-        },
-        {
-            'name': '資料庫管理',
-            'field': 'system'
-        },
-        {
-            'name': '資訊安全',
-            'field': 'system'
-        },
-        {
-            'name': '資料通訊管理',
-            'field': 'system'
-        },
-        {
-            'name': '物件導向軟體工程',
-            'field': 'system'
-        },
-        {
-            'name': '服務導向架構專題研討',
-            'field': 'system'
-        },
-        {
-            'name': '行動網路技術與應用',
-            'field': 'system'
-        },
-        {
-            'name': '物聯網',
-            'field': 'system'
-        },
-        {
-            'name': '資訊科技理論與應用(企)',
-            'field': 'system'
-        },
-        {
-            'name': '智慧型系統',
-            'field': 'system'
-        },
-        {
-            'name': '資訊視覺化',
-            'field': 'system'
-        },
-        {
-            'name': '資訊科學專題研討',
-            'field': 'system'
-        },
-        {
-            'name': '高等電腦網路',
-            'field': 'system'
-        },
-        {
-            'name': '企業資源規劃',
-            'field': 'system'
-        },
-        {
-            'name': '雲端運算',
-            'field': 'system'
-        },
-        {
-            'name': '大數據分析',
-            'field': 'system'
-        },
-        {
-            'name': '人工智慧',
-            'field': 'system'
-        },
-        {
-            'name': '數量方法',
-            'field': 'manage'
-        },
-        {
-            'name': '多變量分析',
-            'field': 'manage'
-        },
-        {
-            'name': '資管個案專題研討',
-            'field': 'manage'
-        },
-        {
-            'name': '供應鏈管理',
-            'field': 'manage'
-        },
-        {
-            'name': '網路消費行為專題研討',
-            'field': 'manage'
-        },
-        {
-            'name': '行銷研究專題研討(企)',
-            'field': 'manage'
-        },
-        {
-            'name': '新產品行銷專題研討(企)',
-            'field': 'manage'
-        },
-        {
-            'name': '網站企劃(企)',
-            'field': 'manage'
-        },
-        {
-            'name': '顧客關係管理',
-            'field': 'manage'
-        },
-        {
-            'name': '資訊傳播專題研討',
-            'field': 'manage'
-        },
-        {
-            'name': '網路市場調查專題研討',
-            'field': 'manage'
-        },
-        {
-            'name': '網路行為專題研討',
-            'field': 'manage'
-        },
-        {
-            'name': '網路創業專題研討',
-            'field': 'manage'
-        },
-        {
-            'name': '網路創業管理',
-            'field': 'manage'
-        },
-        {
-            'name': '服務行銷專題研討(企)',
-            'field': 'manage'
-        },
-        {
-            'name': '金融商品行銷(企)',
-            'field': 'manage'
-        },
-        {
-            'name': '關係行銷專題研討(企)',
-            'field': 'manage'
-        },
-        {
-            'name': '服務創新管理(企)',
-            'field': 'manage'
-        },
-    ];
+    import {pageSlide, linkManager, CourseManager} from "@/api";
 
 
     export default {
@@ -276,26 +47,28 @@
             CourseCard
         },
         mounted() {
-            linkManager(
-                 {
-                     location: 'curriculum-planning'
-                 }
-            ).then(response => {
-                this.curriculumPlanning = response
-            })
-
             this.getPageSlide(
                 {
                     'pageId': this.$route.name,
                 })
+
+            this.getCourse()
+
+            linkManager(
+                {
+                    location: 'curriculum-planning'
+                }
+            ).then(response => {
+                this.curriculumPlanning = response
+            })
         },
         data() {
             return {
                 slidetitle: [],
-                foundationCourse: foundationCourse,
-                obligatoryCourse: obligatoryCourse,
-                handsonCourse: handsonCourse,
-                electiveCourses: electiveCourses,
+                foundationCourse: [],
+                obligatoryCourse: [],
+                handsonCourse: [],
+                electiveCourses: [],
                 curriculumPlanning: []
             }
         },
@@ -305,6 +78,24 @@
                     this.slidetitle = response
                 })
             },
+
+            getCourse() {
+                CourseManager({type: '基礎課程'}).then(response => {
+                    this.foundationCourse = response
+                })
+
+                CourseManager({type: '必修課程'}).then(response => {
+                    this.obligatoryCourse = response
+                })
+
+                CourseManager({type: '實作課程'}).then(response => {
+                    this.handsonCourse = response
+                })
+
+                CourseManager({type: '選修課程'}).then(response => {
+                    this.electiveCourses = response
+                })
+            }
         }
     }
 </script>

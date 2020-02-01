@@ -1,9 +1,9 @@
 <template>
     <a-row :gutter="24">
-        <a-col :key="k.name" :lg="4" :md="6" :sm="8" :xs="12" v-for="k in courses">
+        <a-col :key="k.name" :xl="3" :lg="4" :md="6" :sm="8" :xs="12" v-for="k in courses">
             <a-card :style="{'background-color': getCardColor(k)}" hoverable id="single-course">
                 <div class="course-name">
-                    <p>{{k.name}}</p>
+                    <p>{{k.coursename}}</p>
                 </div>
             </a-card>
         </a-col>
@@ -20,9 +20,9 @@
         },
         methods: {
             getCardColor(k) {
-                if (k.field === 'system') {
+                if (k.field === 1) {
                     return '#cfd4e7'
-                } else if (k.field === 'manage') {
+                } else if (k.field === 2) {
                     return '#e7cfbf'
                 } else {
                     return '#cce4e7'
@@ -35,7 +35,7 @@
 <style scoped>
     #single-course {
         border-radius: 10px;
-        height: 100px;
+        height: 70px;
         margin-bottom: 24px;
         display: flex;
         justify-content: center;
