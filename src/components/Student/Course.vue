@@ -37,7 +37,7 @@
 <script>
     import ContentLayout from "@/components/ContentLayout";
     import CourseCard from "@/components/Student/CourseCard";
-    import {pageSlide, linkManager, CourseManager} from "@/api";
+    import {pageSlide, linkManager, courseManager} from "@/api";
 
 
     export default {
@@ -80,19 +80,19 @@
             },
 
             getCourse() {
-                CourseManager({type: '基礎課程'}).then(response => {
+                courseManager({type: '基礎課程'}).then(response => {
                     this.foundationCourse = response
                 })
 
-                CourseManager({type: '必修課程'}).then(response => {
+                courseManager({type: '必修課程'}).then(response => {
                     this.obligatoryCourse = response
                 })
 
-                CourseManager({type: '實作課程'}).then(response => {
+                courseManager({type: '實作課程'}).then(response => {
                     this.handsonCourse = response
                 })
 
-                CourseManager({type: '選修課程'}).then(response => {
+                courseManager({type: '選修課程'}).then(response => {
                     this.electiveCourses = response
                 })
             }

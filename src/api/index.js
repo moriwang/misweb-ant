@@ -32,10 +32,28 @@ export function teacherManager(parameter) {
     })
 }
 
-export function CourseManager(parameter) {
+export function courseManager(parameter) {
     return axios({
         method: 'get',
         url: '/api/course',
+        params: parameter
+    })
+}
+
+
+export function paperyearList(parameter) {
+    return axios({
+        method: 'get',
+        url: '/api/paperyear',
+        params: parameter
+    })
+}
+
+
+export function paperManager(parameter) {
+    return axios({
+        method: 'get',
+        url: '/api/paper',
         params: parameter
     })
 }
