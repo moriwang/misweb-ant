@@ -4,7 +4,7 @@
             <a-col :key="index" :md="8" :sm="12" :xl="6" :xs="24" v-for="(k,index) in news">
                 <a-card :style="{'background-color':backgroundColor(k.tagcolor)}" @click="showModal(k)" hoverable
                         id="single-news">
-                    <a-tag :color="k.tagcolor">{{k.tag}}</a-tag>
+                    <a-tag :color="k.tagcolor" @click="handleRoute(k.location)">{{k.tag}}</a-tag>
                     <br>
                     <h4 v-if="k.top">「置頂」{{k.title}}</h4>
                     <h4 v-else>{{k.title}}</h4>
@@ -63,6 +63,12 @@
             },
             handleDate(date) {
                 return getDate(date)
+            },
+            handleRoute(location) {
+                if(location !== this.$route.name){
+                    this.visible = false
+                    this.$router.push({ name: location })
+                }
             }
         }
     }
