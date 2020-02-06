@@ -6,7 +6,8 @@
                         id="single-news">
                     <a-tag :color="k.tagcolor">{{k.tag}}</a-tag>
                     <br>
-                    <h4>{{k.title}}</h4>
+                    <h4 v-if="k.top">「置頂」{{k.title}}</h4>
+                    <h4 v-else>{{k.title}}</h4>
                     <br>
                     <p>{{handleDate(k.date)}}</p>
                 </a-card>
