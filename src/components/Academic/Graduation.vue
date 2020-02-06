@@ -16,7 +16,7 @@
 
 <script>
     import ContentLayout from "@/components/ContentLayout";
-    import {pageSlide, paperyearList, paperManager} from "@/api";
+    import {getSlide, getPaperYearList, getPaper} from "@/api";
 
     const columns = [
         {
@@ -51,12 +51,12 @@
             ContentLayout,
         },
         mounted() {
-            this.getPageSlide(
+            this.getgetSlide(
                 {
                     'pageId': this.$route.name,
                 })
 
-            paperyearList({'graduation': 1}
+            getPaperYearList({'graduation': 1}
             ).then(response => {
                 this.yearlist = response
                 this.getPaper({
@@ -83,14 +83,14 @@
                 })
             },
 
-            getPageSlide(parameter) {
-                pageSlide(parameter).then(response => {
+            getgetSlide(parameter) {
+                getSlide(parameter).then(response => {
                     this.slidetitle = response
                 })
             },
 
             getPaper(parameter) {
-                paperManager(parameter).then(response => {
+                getPaper(parameter).then(response => {
                     for (let i = 0; i < response.length; i++){
                         response[i].key = i + 1
                     }

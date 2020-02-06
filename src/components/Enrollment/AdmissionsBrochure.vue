@@ -29,7 +29,7 @@
 <script>
     import ContentLayout from "@/components/ContentLayout";
     import AdmissionTable from "@/components/Enrollment/AdmissionTable";
-    import {linkManager, pageSlide} from "@/api";
+    import {getLink, getSlide} from "@/api";
 
 
     export default {
@@ -39,12 +39,12 @@
             AdmissionTable
         },
         mounted() {
-            this.getPageSlide(
+            this.getgetSlide(
                 {
                     'pageId': this.$route.name,
                 })
 
-            linkManager(
+            getLink(
                 {
                     location: 'admission-brochure'
                 }
@@ -52,7 +52,7 @@
                 this.admissionbrochure = response
             })
 
-            linkManager(
+            getLink(
                 {
                     location: 'previous-exam'
                 }
@@ -68,8 +68,8 @@
             }
         },
         methods: {
-            getPageSlide(parameter) {
-                pageSlide(parameter).then(response => {
+            getgetSlide(parameter) {
+                getSlide(parameter).then(response => {
                     this.slidetitle = response
                 })
             },

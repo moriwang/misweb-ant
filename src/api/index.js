@@ -1,67 +1,67 @@
 import axios from '@/axios'
 
-export function newsManager(parameter) {
+export function getNews(parameter) {
     return axios({
         method: 'get',
-        url: '/api/news',
+        url: '/api/getnews',
         params: parameter
     })
 }
 
-export function newsMore(parameter) {
+export function getMoreNews(parameter) {
     return axios({
         method: 'get',
-        url: '/api/loadmorenews',
+        url: '/api/getmorenews',
         params: parameter
     })
 }
 
-export function linkManager(parameter) {
+export function getLink(parameter) {
     return axios({
         method: 'get',
-        url: '/api/link',
+        url: '/api/getlink',
         params: parameter
     })
 }
 
-export function pageSlide(parameter) {
+export function getSlide(parameter) {
     return axios({
         method: 'get',
-        url: '/api/slide',
+        url: '/api/getslide',
         params: parameter
     })
 }
 
-export function teacherManager(parameter) {
+export function getTeacher(parameter) {
     return axios({
         method: 'get',
-        url: '/api/teacher',
+        url: '/api/getteacher',
         params: parameter
     })
 }
 
-export function courseManager(parameter) {
+export function getCourse(parameter) {
     return axios({
         method: 'get',
-        url: '/api/course',
-        params: parameter
-    })
-}
-
-
-export function paperyearList(parameter) {
-    return axios({
-        method: 'get',
-        url: '/api/paperyear',
+        url: '/api/getcourse',
         params: parameter
     })
 }
 
 
-export function paperManager(parameter) {
+export function getPaperYearList(parameter) {
     return axios({
         method: 'get',
-        url: '/api/paper',
+        url: '/api/getpaperyear',
+        params: parameter
+    })
+}
+
+
+export function getPaper(parameter) {
+    return axios({
+        method: 'get',
+        url: '/api/getpaper',
         params: parameter
     })
 }

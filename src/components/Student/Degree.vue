@@ -54,7 +54,7 @@
 
 <script>
     import ContentLayout from "@/components/ContentLayout";
-    import {pageSlide, linkManager} from "@/api";
+    import {getSlide, getLink} from "@/api";
 
 
     const degreeProgress = [
@@ -82,7 +82,7 @@
             ContentLayout
         },
         mounted() {
-            linkManager(
+            getLink(
                 {
                     location: 'degree-requirements'
                 }
@@ -90,7 +90,7 @@
                 this.degreeRequirements = response
             })
 
-            this.getPageSlide(
+            this.getgetSlide(
                 {
                     'pageId': this.$route.name,
                 })
@@ -113,8 +113,8 @@
             getDirection(width) {
                 return (width < 680) ? 'vertical' : 'horizontal'
             },
-            getPageSlide(parameter) {
-                pageSlide(parameter).then(response => {
+            getgetSlide(parameter) {
+                getSlide(parameter).then(response => {
                     this.slidetitle = response
                 })
             },

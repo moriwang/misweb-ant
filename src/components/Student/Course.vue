@@ -37,7 +37,7 @@
 <script>
     import ContentLayout from "@/components/ContentLayout";
     import CourseCard from "@/components/Student/CourseCard";
-    import {pageSlide, linkManager, courseManager} from "@/api";
+    import {getSlide, getLink, getCourse} from "@/api";
 
 
     export default {
@@ -47,14 +47,14 @@
             CourseCard
         },
         mounted() {
-            this.getPageSlide(
+            this.getgetSlide(
                 {
                     'pageId': this.$route.name,
                 })
 
             this.getCourse()
 
-            linkManager(
+            getLink(
                 {
                     location: 'curriculum-planning'
                 }
@@ -73,26 +73,26 @@
             }
         },
         methods: {
-            getPageSlide(parameter) {
-                pageSlide(parameter).then(response => {
+            getgetSlide(parameter) {
+                getSlide(parameter).then(response => {
                     this.slidetitle = response
                 })
             },
 
             getCourse() {
-                courseManager({type: '基礎課程'}).then(response => {
+                getCourse({type: '基礎課程'}).then(response => {
                     this.foundationCourse = response
                 })
 
-                courseManager({type: '必修課程'}).then(response => {
+                getCourse({type: '必修課程'}).then(response => {
                     this.obligatoryCourse = response
                 })
 
-                courseManager({type: '實作課程'}).then(response => {
+                getCourse({type: '實作課程'}).then(response => {
                     this.handsonCourse = response
                 })
 
-                courseManager({type: '選修課程'}).then(response => {
+                getCourse({type: '選修課程'}).then(response => {
                     this.electiveCourses = response
                 })
             }

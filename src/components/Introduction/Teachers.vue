@@ -24,7 +24,7 @@
 <script>
     import ContentLayout from "@/components/ContentLayout";
     import TeacherCard from "@/components/common/TeacherCard";
-    import {teacherManager, pageSlide} from '@/api'
+    import {getTeacher, getSlide} from '@/api'
 
     export default {
         name: "Teachers",
@@ -33,7 +33,7 @@
             TeacherCard
         },
         mounted() {
-            this.getPageSlide(
+            this.getgetSlide(
                 {
                     'pageId': this.$route.name,
                 })
@@ -49,23 +49,23 @@
             }
         },
         methods: {
-            getPageSlide(parameter) {
-                pageSlide(parameter).then(response => {
+            getgetSlide(parameter) {
+                getSlide(parameter).then(response => {
                     this.slidetitle = response
                 })
             },
 
             getTeacherList() {
-                teacherManager({state: '專任教師'}).then(response => {
+                getTeacher({state: '專任教師'}).then(response => {
                     this.fulltimeteacher = response
                 })
-                teacherManager({state: '合聘教師'}).then(response => {
+                getTeacher({state: '合聘教師'}).then(response => {
                     this.jointteacher = response
                 })
-                teacherManager({state: '他系教師'}).then(response => {
+                getTeacher({state: '他系教師'}).then(response => {
                     this.otherteacher = response
                 })
-                teacherManager({state: '行政人員'}).then(response => {
+                getTeacher({state: '行政人員'}).then(response => {
                     this.staff = response
                 })
             }

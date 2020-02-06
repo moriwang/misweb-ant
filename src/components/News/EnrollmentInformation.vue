@@ -2,7 +2,7 @@
     <content-layout :title="slidetitle">
         <template v-slot:content>
             <news-card :news="news"></news-card>
-            <div style="text-align: center; margin-top: 10px">
+            <div class="loadmore">
                 <a-button type="" @click="getMoreNews()" v-if="loadmore">加載更多</a-button>
                 <p v-else style="font-size: 14px; color: #b1b1b4">—— 没有更多了 ——</p>
             </div>
@@ -13,7 +13,7 @@
 <script>
     import ContentLayout from "@/components/ContentLayout";
     import NewsCard from "@/components/common/NewsCard";
-    import {newsManager, newsMore, pageSlide} from "@/api";
+    import {getNews, getMoreNews, getSlide} from "@/api";
 
 
     export default {
@@ -23,12 +23,12 @@
             NewsCard
         },
         mounted() {
-            this.getPageSlide(
+            this.getgetSlide(
                 {
                     'pageId': this.$route.name,
                 })
 
-            newsManager(
+            getNews(
                 {
                     location: '1-2'
                 }
@@ -50,8 +50,8 @@
             }
         },
         methods: {
-            getPageSlide(parameter) {
-                pageSlide(parameter).then(response => {
+            getgetSlide(parameter) {
+                getSlide(parameter).then(response => {
                     this.slidetitle = response
                 })
             },
@@ -61,7 +61,7 @@
                     'location': '1-2'
                 }
                 if (this.total - this.news.length > 0){
-                    newsMore(parameter).then(response => {
+                    getMoreNews(parameter).then(response => {
                         this.news = this.news.concat(response)
                         this.page ++
                         if (this.news.length == this.total){
@@ -78,4 +78,12 @@
 </script>
 
 <style scoped>
+    .loadmore{
+        position: absolute;
+        text-align: center;
+        left: 0;
+        right: 0;
+        bottom: 24px;
+        margin: auto;
+    }
 </style>

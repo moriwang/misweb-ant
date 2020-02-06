@@ -29,6 +29,7 @@
         margin-right: auto;
         width: 1200px;
         padding: 40px 0 60px 0;
+        position: relative;
     }
 
     @media only screen and (max-width: 1440px) {

@@ -42,14 +42,14 @@
 
 <script>
     import {getYear} from "@/utils";
-    import {linkManager} from "@/api";
+    import {getLink} from "@/api";
 
     const year = getYear();
 
     export default {
         name: "Footer",
         mounted() {
-            linkManager(
+            getLink(
                 {
                     location: 'footer-link'
                 }
@@ -57,7 +57,7 @@
                 this.footerLink = response
             })
 
-            linkManager(
+            getLink(
                 {
                     location: 'map'
                 }

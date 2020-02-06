@@ -14,7 +14,7 @@
 
 <script>
     import ContentLayout from "@/components/ContentLayout";
-    import {pageSlide} from "@/api";
+    import {getSlide} from "@/api";
 
 
     const downloads = [
@@ -50,7 +50,7 @@
             ContentLayout,
         },
         mounted() {
-            this.getPageSlide(
+            this.getgetSlide(
                 {
                     'pageId': this.$route.name,
                 })
@@ -62,8 +62,8 @@
             }
         },
         methods: {
-            getPageSlide(parameter) {
-                pageSlide(parameter).then(response => {
+            getgetSlide(parameter) {
+                getSlide(parameter).then(response => {
                     this.slidetitle = response
                 })
             },

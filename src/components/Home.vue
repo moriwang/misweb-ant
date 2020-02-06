@@ -10,7 +10,7 @@
 <script>
     import ContentLayout from "@/components/ContentLayout";
     import NewsCard from "@/components/common/NewsCard";
-    import {newsManager, pageSlide} from "@/api";
+    import {getNews, getSlide} from "@/api";
 
 
     export default {
@@ -20,7 +20,7 @@
             NewsCard
         },
         mounted() {
-            newsManager(
+            getNews(
                 {
                     location: '0'
                 }
@@ -28,7 +28,7 @@
                 this.news = response[0]
             })
 
-            this.getPageSlide(
+            this.getgetSlide(
                 {
                     'pageId': this.$route.name,
                 })
@@ -40,8 +40,8 @@
             }
         },
         methods: {
-            getPageSlide(parameter) {
-                pageSlide(parameter).then(response => {
+            getgetSlide(parameter) {
+                getSlide(parameter).then(response => {
                     this.slidetitle = response
                 })
             },
