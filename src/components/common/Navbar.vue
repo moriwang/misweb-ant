@@ -1,6 +1,6 @@
 <template>
     <div id="navbar">
-        <div class="logo">
+        <div class="logo" @click="handleRoute()">
             <img src="../../assets/logo_ntpu.png"/>
         </div>
         <a-menu :defaultSelectedKeys="[$route.name]" :subMenuCloseDelay="0" class="nav-menu" mode="horizontal"
@@ -90,7 +90,18 @@
 
 <script>
     export default {
-        name: "Navbar"
+        name: "Navbar",
+        inject: ['reload'],
+        methods: {
+            handleRoute() {
+                if(this.$route.name !== '0'){
+                    this.$router.push({ name: '0' })
+                }
+                else{
+                    this.reload()
+                }
+            }
+        }
     }
 </script>
 
