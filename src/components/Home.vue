@@ -25,7 +25,7 @@
                     location: '0'
                 }
             ).then(response => {
-                this.news = response
+                this.news = response[0]
             })
 
             this.getPageSlide(
@@ -36,7 +36,7 @@
         data() {
             return {
                 slidetitle: [],
-                news: []
+                news: [],
             }
         },
         methods: {

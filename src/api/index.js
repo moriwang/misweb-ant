@@ -8,6 +8,14 @@ export function newsManager(parameter) {
     })
 }
 
+export function newsMore(parameter) {
+    return axios({
+        method: 'get',
+        url: '/api/loadmorenews',
+        params: parameter
+    })
+}
+
 export function linkManager(parameter) {
     return axios({
         method: 'get',
